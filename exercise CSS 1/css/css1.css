@@ -78,3 +78,10 @@ code {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: green;
 }
+#antwoord6child p:nth-child(odd) {
+    color: purple;
+}
+#antwoord6adjacent div + p {
+    color: red;
+    font-weight: bold;
+}
