@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+#navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6em;
+    width: 100%;
+    padding: 1em;
+    background-color: white;
+    border-bottom: 1px solid black;
+    z-index: 1000;
+}
+#navigation li {
+    margin-left: 1em;
+}
+#mainArticle {
+    position: relative;
+    margin-top: 5em;
+    padding: 1em;
+}
+.title {
+    scroll-margin-top: 5em;
+}
