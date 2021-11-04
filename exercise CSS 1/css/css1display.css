@@ -1,0 +1,14 @@
+/* opdracht 2 */
+#fixedH1 {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    color: red;
+}
+/* opdracht 3 */
+#fixedH1Move {
+    position: fixed;
+    top: 80px;
+    right: 70px;
+    color: darkred;
+}
