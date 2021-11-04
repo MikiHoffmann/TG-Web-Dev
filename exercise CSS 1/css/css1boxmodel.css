@@ -1,0 +1,8 @@
+.block {
+    display: block;
+    background-color: green;
+}
+.inline {
+    display: inline-block;
+    background-color: white;
+}
