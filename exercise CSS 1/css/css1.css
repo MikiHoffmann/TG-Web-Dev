@@ -11,6 +11,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
 }
+.vultext {
+    margin: 2em;
+}
 #mainButton {
     position: fixed;
     top: .5em;
@@ -21,10 +24,14 @@ body {
     border-radius: 5%;
     z-index: 1000;
 }
+div {
+    margin-top: 1em;
+}
 h1,
 h2 {
     margin: 1em 0;
 }
+/* opdracht 3 */
 h3 {
     margin: 1em 0;
     color:green;
@@ -56,6 +63,7 @@ code {
     margin: .5em;
     font-size: 1.2em;
 }
+/* opdracht 4 */
 #antwoord4 {
     font-family: 'Times New Roman', Times, serif;
     background-color: lightblue;
@@ -70,6 +78,7 @@ code {
     margin: 1em 0;
     color: darkblue
 }
+/* opdracht 5 */
 .black {
     font-family: 'Times New Roman', Times, serif;
     color: black;
@@ -78,10 +87,48 @@ code {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: green;
 }
+/* opdracht 6 */
 #antwoord6child p:nth-child(odd) {
     color: purple;
 }
 #antwoord6adjacent div + p {
     color: red;
     font-weight: bold;
+}
+#antwoord6general div ~ p {
+    color: indigo;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* opdracht 7 */
+#antwoord7 a {
+    display: block;
+}
+h4 {
+    font-style: italic;
+}
+#purpleText {
+    color: purple;
+}
+.yellowBlue {
+    color: yellow;
+    background-color: blue;
+}
+p[title] {
+    color:crimson;
+}
+h4, h5, h6 {
+    color: red;
+}
+/* opdracht 8 */
+.cascade {
+    color: red;
+}
+.cascade {
+    color: blue;
+}
+#inheritance {
+    color: purple;
+}
+#noInheritance {
+    color: darkred;
 }

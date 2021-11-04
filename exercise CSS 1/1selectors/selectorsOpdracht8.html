@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/css1.css" />
+    <title>Selectors & Visual rules CSS | opdracht 8</title>
+</head>
+
+<body>
+
+    <nav>
+        <button id="mainButton"><a href="../index.html">terug naar index</a></button>
+    </nav>
+
+    <article>
+        <h1>Selectors & Visual rules</h1>
+        <h2>opdracht 8</h2>
+        <p>
+            Styling die je toepast wordt toegepast in een bepaalde volgorde. Het kan voorkomen dat je styling toepast en
+            vervolgens niet het gewenste resultaat ziet.
+            <br>
+            Cascade en Inheritance zijn belangrijke concepten om te begrijpen hoe styling werkt. Lees hier in de
+            officiële documentatie meer over cascade en inheritance.
+            <br>
+            Zoek ook andere referenties om het concept te begrijpen.
+            <br><br>
+            Leg in eigen woorden uit wat met cascade en inheritance wordt bedoeld.
+            <br>
+            Maak voorbeelden om je antwoord uit te leggen.
+        </p>
+
+        <div>
+            <h2>antwoord:</h2>
+            <p>
+                <h3>cascade</h3>
+                Cascade is de volgorde waarin de styling in CSS wordt gelezen en uitgevoerd. Dit is van boven naar
+                beneden.
+                <br>
+                BV: als je twee keer een selector gebruikt om een kleur te stylen zal de laatste gebruikt worden, die de
+                eerdere overruled..
+                <br>
+            <h3 class="cascade">H3 met class cascade, kleur rood.</h3>
+            (twee keer een class selector onder elkaar, eerste kleur rood; de tweede kleur blauw, deze wordt derhalve
+            gebruikt.)
+            </p>
+            <p>
+                <h3>inheritance</h3>
+                Inheritance is dat een style door child elements wordt overgenomen van de parent.
+                <br><br>
+                Een OL met kleur purple, list item 4 met ID een andere kleur gegeven.
+                <ol id="inheritance">
+                    <li>inheritance1</li>
+                    <li>inheritance1</li>
+                    <li>inheritance1</li>
+                    <li id="noInheritance"> no inheritance</li>
+                    <li>inheritance1</li>
+                </ol>
+            </p>
+        </div>
+
+    </article>
+
+</body>
+
+</html>
