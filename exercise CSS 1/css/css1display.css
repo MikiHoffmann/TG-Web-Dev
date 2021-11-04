@@ -12,3 +12,11 @@
     right: 70px;
     color: darkred;
 }
+/* opdracht 4 */
+#fixedH1Move2 {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    color: rgb(97, 47, 47);
+}
+/* opdracht 5 */
