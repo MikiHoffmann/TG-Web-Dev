@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+.vultext {
+    margin: 2em;
+}
+#mainButton {
+    position: fixed;
+    top: .5em;
+    right: .5em;
+    font-size: 1.2em;
+    padding: .3em;
+    border: 1px solid green;
+    border-radius: 5%;
+    z-index: 1000;
+}
+div {
+    margin-top: 1em;
+}
+h1,
+h2 {
+    margin: 1em 0;
+}
+h3 {
+    margin: 1em 0;
+    color:green;
+    font-family: 'Times New Roman', Times, serif;
+}
+p {
+    margin-top: 1em;
+}
+ul {
+    margin: .7em;
+}
+li {
+    list-style-type: none;
+    margin-top: .3em;
+}
+a {
+    
+    text-decoration: none;
+    color: rgb(47, 45, 87);
+}
+code {
+    margin: .5em;
+    font-size: 1.2em;
+}
