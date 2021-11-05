@@ -20,3 +20,55 @@
     color: rgb(97, 47, 47);
 }
 /* opdracht 5 */
+#imagePosition {
+    position: relative;
+    margin: 1em;
+    padding: 1em;
+}
+#imagePosition img {
+    height: 400px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#imagePosition h1, #imagePosition p {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+/* opdracht 6 */
+#outerSquare {
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+}
+#innerSquare {
+    position: relative;
+    top: 25px;
+    left: 25px;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}
+/* opgave 7 */
+#imgSquare {
+    position: relative;
+    width: 500px;
+}
+#imgSquare img {
+    height: auto;
+    width: 500px;
+}
+#imgSquare div {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+    text-align: center;
+}
+#imgSquare div span {
+    color: white;
+}
+#imgSquare div p {
+    color: yellowgreen;
+}
