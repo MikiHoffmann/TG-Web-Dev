@@ -72,3 +72,30 @@
 #imgSquare div p {
     color: yellowgreen;
 }
+/* opgave 8 */
+#imgRect {
+    position: relative;
+    width: 600px;
+}
+#imgRect img {
+    height: auto;
+    width: 85%;
+}
+#imgRect div {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+}
+#bbrrr h1 {
+    margin: 0;
+    padding-left: 40px;
+    font-size: 2em;
+    background-color:rgb(230, 197, 15);
+}
+#bbrrr p {
+    margin-left: 20px;
+    padding-left: 20px;
+    background-color: rgb(255,255,255,0.7);
+    width: 60%;
+}
