@@ -4,11 +4,38 @@
 h4 {
     margin-top: 1em;
 }
+li {
+    list-style-type: square;
+}
+/* opdracht 3 */
+#antwoord3-1 p::before {
+    content: "this is ::before";
+    color: green;
+    position: relative;
+}
+#antwoord3-1 p::after {
+    content: "this is ::after";
+    color: red;
+    position: relative;
+}
+#antwoord3-2 p::first-letter {
+    color: green;
+    font-size: 2em;
+    float: left;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#antwoord3-3 p::first-line {
+    background-color: blueviolet;
+    font-size: 2em;
+}
+#antwoord3-4 li::marker {
+    color: crimson;
+}
 /* opdracht 4 */
 #pseudoButton {
     height: 50px;
     width: 600px;
-    background-color: rgb(58, 119, 211);
+    /*background-color: rgb(58, 119, 211);*/
 }
 #pseudoButton button {
     height: 50px;
