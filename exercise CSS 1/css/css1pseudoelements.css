@@ -62,3 +62,44 @@ li {
     width: 46px;
     position: absolute;
 }
+/* opdracht 5 */
+#antwoord5 {
+    position: relative;
+    height: auto;
+    height: 492px;
+    width: 813px;
+    border: 6px ridge grey;
+    z-index: 1;
+}
+#antwoord5 p::before {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    content: url("https://res.cloudinary.com/natuurmonumenten/image/upload/ar_800:480,c_fill,dpr_1.0,f_auto,g_xy_center,q_auto,w_800,x_1500,y_1001/v1/2019-09/Wandelen-Leuvenumse-Bossen-NAMO78114");
+}
+/*opdracht 6 */
+
+/* opdracht 7 */
+#antwoord7 {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 50px;
+    background-color: red;
+}
+#antwoord7::before {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    transform: rotate(30deg);
+}
+#antwoord7::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    transform: rotate(240deg);
+}
