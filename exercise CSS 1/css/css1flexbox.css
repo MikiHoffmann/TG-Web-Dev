@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* opgave 1 */
+#flexContainer1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: coral;
+    padding: .5em;
+}
+#flexContainer1 > div {
+    margin: 1em;
+    padding: 2.5em;
+    background-color: lightskyblue;
+}
+/* opgave 2 */
+#flexContainer2 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: coral;
+    padding: .5em;
+}
+#flexContainer2 > div {
+    margin: 1em;
+    padding: 2.5em;
+    background-color: lightskyblue;
+}
+/* opgave 3 */
+#flexContainer3 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: coral;
+    padding: .5em;
+}
+#flexContainer3 > div {
+    margin: 1em;
+    padding: 2.5em;
+    text-align: center;
+    background-color: lightskyblue;
+}
+/* opgave 4 */
+.flexContainer4 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: coral;
+    padding: .5em;
+}
+.flexContainer4 > div {
+    margin: 1em;
+    padding: 2.5em;
+    text-align: center;
+    background-color: lightskyblue;
+}
+.justifyLeft {
+    justify-content: flex-start;
+}
+.justifyCenter {
+    justify-content: center;
+}
+.justifyRight {
+    justify-content: flex-end;
+}
+.justifyAround {
+    justify-content: space-around;
+}
+.justifyBetween {
+    justify-content: space-between;
+}
+.justifyEven {
+    justify-content: space-evenly;
+}
