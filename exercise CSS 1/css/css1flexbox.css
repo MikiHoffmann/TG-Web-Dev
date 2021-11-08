@@ -108,3 +108,51 @@
 .alignBaseline {
     align-items: baseline;
 }
+/* opgave 6 */
+#flexContainer6 {
+    display: flex;
+    height: 35em;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color: coral;
+    padding: .5em;
+}
+#flexContainer6 > div {
+    margin: .3em;
+    padding: 1.5em;
+    align-self: stretch;
+    background-color: lightskyblue;
+}
+/* opgave 7 */
+#flexContainer7 {
+    display: flex;
+    height: 35em;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    background-color: coral;
+    padding: .5em;
+}
+#flexContainer7 > div {
+    margin: .3em;
+    padding: 1.5em;
+    background-color: lightskyblue;
+}
+/* opgave 8 */
+#flexContainer8 {
+    display: flex;
+    height: 20em;
+    width: 30em;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    background-color: coral;
+    padding: .5em;
+}
+#flexContainer8 > div {
+    height: 50%;
+    width: 33,33%;
+    padding: 1.5em;
+    background-color: lightskyblue;
+}
