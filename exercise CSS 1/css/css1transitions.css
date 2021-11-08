@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+/* opgave 2 */
+.colorChange {
+    color: blue;
+    transition-duration: 3s;
+    cursor: pointer;
+}
+.colorChange:hover {
+    color: red;
+}
+/* opgave 3 */
+.timingContainer {
+    width: 50em;
+    border: 1px solid black;
+}
+.timingContainer div {
+    margin: .1em;
+    padding: .5em .7em;
+    width: fit-content;
+    background-color: white;
+    border: 1px solid black;
+    transition-duration: 3s;
+}
+.timingContainer:hover div {
+    background-color: red;
+    margin-left: 47.6em;
+    transition-duration: 3s;
+}
+.one {
+    transition-timing-function: linear;
+}
+.two {
+    transition-timing-function: ease-in;
+}
+.three {
+    transition-timing-function: ease-out;
+}
+.four {
+    transition-timing-function: ease-in-out;
+}
+.five {
+    transition-timing-function: cubic-bezier(0.5, 1, 0.1, -0.68);
+}
+.timingContainer:hover .one {
+    transition-timing-function: linear;
+    border-radius: 50%;
+}
+.timingContainer:hover .two {
+    transition-timing-function: ease-in;
+    border-radius: 9%;
+}
+.timingContainer:hover .three {
+    transition-timing-function: ease-out;
+}
+.timingContainer:hover .four {
+    transition-timing-function: ease-in-out;
+}
+.timingContainer:hover .five {
+    transition-timing-function: cubic-bezier(0.5, 1, 0.1, -0.68);
+}
+/* opgave 4 */
+.centerContainer {
+    height: 300px;
+    width: 500px;
+    border: 1px solid black;
+}
+.centerContainer div{
+    height: 30px;
+    width: 30px;
+    padding-top: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
