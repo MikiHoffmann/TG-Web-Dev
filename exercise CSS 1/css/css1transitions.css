@@ -62,6 +62,7 @@
 }
 /* opgave 4 */
 .centerContainer {
+    display: block;
     height: 300px;
     width: 500px;
     border: 1px solid black;
@@ -69,7 +70,44 @@
 .centerContainer div{
     height: 30px;
     width: 30px;
+    margin-top: 120px;
+    margin-left: 220px;
     padding-top: 5px;
     text-align: center;
     border: 1px solid black;
+    transition: 2s;
+    transition: margin-top 1s 1s,margin-left 1s;
+}
+.oneMove {
+    position: absolute;
+    z-index: 1;
+    transition-timing-function: linear;
+}
+.twoMove {
+    position: absolute;
+    z-index: 2;
+    transition-timing-function: linear;
+}
+.threeMove {
+    position: absolute;
+    z-index: 3;
+    transition-timing-function: ease-in-out;
+}
+.centerContainer:hover .oneMove {
+    margin-left: 470px;
+    margin-top: 0;
+    transition: margin-left 1s,margin-top 1s 1s;
+    transition-timing-function: linear;
+}
+.centerContainer:hover .twoMove {
+    margin-left: 0px;
+    margin-top: 0;
+    transition: margin-left 1s,margin-top 1s 1s;
+    transition-timing-function: linear;
+}
+.centerContainer:hover .threeMove {
+    margin-left: 0px;
+    margin-top: 270px;
+    transition: margin-left 1s,margin-top 1s 1s;
+    transition-timing-function: ease-in-out;
 }
