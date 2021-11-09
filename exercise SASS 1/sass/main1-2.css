@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+h1 {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.banner {
+  font-family: "Pacifico", cursive;
+  height: 400px;
+  background-image: url("https://www.thespruceeats.com/thmb/rlh4JahOomED1ERw7fjZ8b2XX88=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/homemade-lemonade-2216227-hero-02copy-767d28c1e7cf468db2282d77103d0bf4.jpg");
+}
+
+.banner .slogan {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 4px solid black;
+  top: 200px;
+  left: 25%;
+  width: 50%;
+  height: 200px;
+  text-align: center;
+}
+
+.banner .slogan span {
+  font-size: 24px;
+  line-height: 200px;
+  color: red;
+}
+
+.banner .slogan span:hover {
+  color: green;
+}
+
+.banner .slogan span:visited {
+  color: blue;
+}
+
+.container {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+}
+
+.container .icon {
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  margin: 2%;
+  border: 4px solid black;
+  font-size: 32px;
+}
+
+.container .icon img {
+  height: auto;
+  width: 100%;
+}
+/*# sourceMappingURL=main1-2.css.map */
