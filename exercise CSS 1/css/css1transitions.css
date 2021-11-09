@@ -181,3 +181,46 @@
     margin-top: 100px;
     transition: 1s;
 }
+/* opdracht 6 */
+.cardContainer {
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+.card {
+    height: 300px;
+    width: 200px;
+    background-color: gray;
+    border: 2px ridge purple;
+    color: white;
+    text-align: center;
+    border-radius: 15%;
+}
+.card:hover {
+    color: purple;
+    margin-top: 0;
+}
+.card1 {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: 1;
+}
+.card2 {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    z-index: 2;
+}
+.card3 {
+    position: absolute;
+    top: 0;
+    left: 240px;
+    z-index: 3;
+}
+.card4 {
+    position: absolute;
+    top: 0;
+    left: 360px;
+    z-index: 4;
+}
