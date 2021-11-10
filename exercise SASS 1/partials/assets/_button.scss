@@ -1,0 +1,16 @@
+@import "./colors";
+
+.button {
+    height: 4em;
+    margin: 4em;
+    padding: 1em;
+    font-size: 1em;
+    color: whitesmoke;
+    background-color: $buttonColor;
+    &:hover {
+        color: black;
+        background-color: $buttonColorHover;
+        margin: 3.5em auto auto 4.5em;
+        box-shadow: 3px 3px 5px black;
+    }
+}

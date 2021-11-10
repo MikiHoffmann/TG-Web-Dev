@@ -1,0 +1,25 @@
+.button {
+  height: 4em;
+  margin: 4em;
+  padding: 1em;
+  font-size: 1em;
+  color: whitesmoke;
+  background-color: blue;
+}
+
+.button:hover {
+  color: black;
+  background-color: lightblue;
+  margin: 3.5em auto auto 4.5em;
+  -webkit-box-shadow: 3px 3px 5px black;
+          box-shadow: 3px 3px 5px black;
+}
+
+.button {
+  background-color: purple;
+}
+
+.button:hover {
+  background-color: rebeccapurple;
+}
+/*# sourceMappingURL=style.css.map */
