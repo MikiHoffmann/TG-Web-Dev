@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* 
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.box {
+  width: 100%;
+  padding: .5em;
+}
+
+@media only screen and (min-width: 481px) {
+  .box {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .box {
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .box {
+    width: 25%;
+  }
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+/*# sourceMappingURL=queries.css.map */

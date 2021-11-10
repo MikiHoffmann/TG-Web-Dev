@@ -1,0 +1,29 @@
+@import "./assets/queries";
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.box {
+    width: 100%;
+    padding: .5em;
+    @media #{$tablet} {
+        width: 50%;
+    }
+    @media #{$laptop} {
+        width: 33%;
+    }
+    @media #{$desktop} {
+        width: 25%;
+    }
+}
+img {
+    height: auto;
+    width: 100%;
+}
