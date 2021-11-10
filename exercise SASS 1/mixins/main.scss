@@ -1,0 +1,44 @@
+@import "./assets/colors";
+
+@mixin mainButton {
+    background-color: $buttonBackground;
+    color: $textColor;
+    margin: 3em;
+    padding: .3em;
+    font-size: 3em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10%;
+    box-shadow: 2px 2px 4px black;
+    transition: .5s;
+    &:hover {
+        background-color: $buttonBackgroundHover;
+        color: $textColorHover;
+        margin: 2.5em auto auto 3.5em;
+        box-shadow: 4px 4px 7px black;
+        transition: .5s;
+    }
+}
+
+@mixin colorChange {
+    position: fixed;
+    top: 18em;
+    left: 5em;
+    height: 10em;
+    width: 10em;
+    background-color: $startBackground;
+    border: 2px solid $endBackground;
+    box-shadow: 4px 4px 7px black;
+    transition: $time;
+    &:hover {
+        background-color: $endBackground;
+        border: 2px solid $startBackground;
+        transition: $time;
+    }
+}
+.button {
+    @include mainButton();
+}
+
+.colorChangingSquare {
+    @include colorChange();
+}
