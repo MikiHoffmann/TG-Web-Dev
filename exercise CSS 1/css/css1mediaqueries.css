@@ -16,6 +16,16 @@ body {
 .clearfix {
   clear: both;
 }
+#mainButton {
+  position: fixed;
+  top: .5em;
+  right: .5em;
+  font-size: 1.2em;
+  padding: .3em;
+  border: 1px solid green;
+  border-radius: 5%;
+  z-index: 1000;
+}
 /* Title and Description */
 .page-title {
   text-align: center;
