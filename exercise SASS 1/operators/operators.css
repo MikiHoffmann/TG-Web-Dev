@@ -1,0 +1,46 @@
+/* 1 */
+.image {
+  height: 800px;
+  width: auto;
+}
+
+/* 2 */
+.image {
+  height: 500px;
+  width: auto;
+}
+
+/* 3 */
+.image {
+  height: 100px;
+  width: auto;
+}
+
+/* 4 */
+.image {
+  height: -100px;
+  width: auto;
+}
+
+/* 5 */
+.image {
+  height: 600px;
+  width: auto;
+}
+
+/* 6 */
+.image {
+    height: 750px * 1px;
+    width: auto;
+} 
+/* 7 */
+.image {
+    height: 30px / 5px;
+    width: 24px/ 4;
+}
+/* 8 */
+.image {
+  height: 6;
+  width: 6px;
+}
+/*# sourceMappingURL=operators.css.map */
