@@ -32,6 +32,10 @@ img {
     height: auto;
     max-width: 100%;
 }
+ul {
+    list-style-type: none;
+    color: blue;
+}
 #navigationKok {
     margin-top: 5em;
     text-align: right;
@@ -113,16 +117,25 @@ figcaption h3 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
 }
 .menuItemKok {
     padding: 2em;
     width: 100%;
 }
 .footerKok {
-    height: 8em;
     width: 100%;
     background-color: yellowgreen;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.footerSection {
+    width: 100%;
+    text-align: center;
+    padding: 1.2em 3em;
+    font-size: .7em;
+    color: blue;
 }
 @media only screen and (min-width:481px) {
     .articleKok figure {
@@ -138,6 +151,16 @@ figcaption h3 {
         justify-content: flex-start;
         width: 30%;
         padding: .5em
+    }
+    .menuContainerKok {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+    }
+    .footerSection {
+        width: 50%;
+        padding: .6em 3em;
     }
 }
 @media only screen and (min-width:769px) {
