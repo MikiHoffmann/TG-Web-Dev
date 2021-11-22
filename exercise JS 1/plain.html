@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 4</h3>
+        <input type="text" id="name"/>
+        <button onclick=findName();>check name</button>
+        <div id="nameLog" style="margin: 1em;"></div>
+    </div>
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 5</h3>
+        <button onclick=randomFruits();>random fruit</button>
+        <div id="fruitLog" style="margin: 1em;"></div>
+    </div>
+<script>
+    //opgave 4
+    const names = ["Cilvya","Mike","Tristan","Carolyn","Miki"];
+
+    function findName() {
+        let myName = document.getElementById('name').value;
+        const upNames = names.map(name=>name.toUpperCase());
+        let myUpName = myName.toUpperCase();
+
+        if (upNames.includes(myUpName) === true) {
+            document.getElementById('nameLog').innerHTML = "Yes, " + myName + " is in this group!";
+        }
+        else {
+            document.getElementById('nameLog').innerHTML = "No, " + myName + " is not in this group!";
+        }
+    }
+    // opgave 5.1
+    const numbers = [2,4,3,6,7,5,1,9,8,10];
+    console.log(numbers);
+    const fruits = ['apple','strawberry','grape','papaya','kiwi'];
+    console.log(fruits[0], fruits[1]);
+
+    function randomFruits(index,value) {
+        let randomNumber = Math.floor(Math.random()*10);
+        console.log(randomNumber);
+        console.log(fruits.length);
+        let randomFruit = randomNumber % fruits.length;
+        document.getElementById('fruitLog').innerHTML = fruits[randomFruit];
+    }
+    fruits[0] = "pear";
+    console.log(fruits);
+</script>
+
+
+</body>
+</html>
