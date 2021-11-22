@@ -11,7 +11,6 @@
     margin: 150px auto;
     height: 500px;
     width: 500px;
-    font-size: 40px;
 }
 .block {
     display: flex;
@@ -22,11 +21,19 @@
     background-color: rgb(202, 62, 104);
     color: white;
     border: black;
+    transition: .55s;
+}
+h2 {
     transition: .6s;
+    font-size: 40px;
 }
 .block:hover {
     border: 10px solid black;
     box-shadow: inset 4px 4px 14px rgb(39, 37, 37), inset -4px -4px 14px rgb(39, 37, 37);
-    font-size: 35px;
+    transition: .6s;
+}
+.block:hover h2 {
+    transition: .6s;
+    transform: scale(0.8);
     text-shadow: 2px 2px 4px rgb(39, 37, 37);
 }
