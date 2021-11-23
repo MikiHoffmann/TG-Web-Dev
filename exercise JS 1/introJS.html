@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro JS</title>
+</head>
+<body>
+
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 4.1</h3>
+        <label for="name">Type: "Hello World!</label>
+        <input type="text" id="hello"/>
+        <button onclick=helloWorld();>hello world</button>
+        <div id="worldLog" style="margin: 1em;"></div>
+        <label for="number">insert a number:</label>
+        <input type="text" id="numberFour"/>
+        <button onclick=numberLog();>numberLog</button>
+        <div id="numberLog" style="margin: 1em;"></div>
+        <script>
+            // opgave 4.1
+            function helloWorld() {
+                let message = document.getElementById('hello');
+                document.getElementById('worldLog').innerHTML = message;
+            }
+            // opgave 4.1 d)
+            function numberLog() {
+                let numberThis = number(document.getElementById('numberFour').value);
+                document.getElementById('numberLog').innerHTML = numberThis;
+                function number(a) {
+                return a * 4;
+                }
+            }
+        </script>
+    </div>
+
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 4.3</h3>
+        <input type="text" id="randomNumberPar"/>
+        <button onclick=randomNumber();>random number</button>
+        <div id="randomNumberLog" style="margin: 1em;"></div>
+        <script>
+            //opgave 4.3
+            function randomNumber() {
+                let x = document.getElementById('randomNumberPar').value;
+                document.getElementById('randomNumberLog').innerHTML = Math.floor(Math.random()*x);
+            }
+        </script>
+    </div>
+
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 4.4</h3>
+        <input type="text" id="name"/>
+        <button onclick=findName();>check name</button>
+        <div id="nameLog" style="margin: 1em;"></div>
+        <script>
+            //opgave 4.4
+            const names = ["Cilvya","Mike","Tristan","Carolyn","Miki"];
+        
+            function findName() {
+                let myName = document.getElementById('name').value;
+                const upNames = names.map(name=>name.toUpperCase());
+                let myUpName = myName.toUpperCase();
+                
+                if (upNames.includes(myUpName) === true) {
+                    document.getElementById('nameLog').innerHTML = "Yes, " + myName + " is in this group!";
+                }
+                else {
+                    document.getElementById('nameLog').innerHTML = "No, " + myName + " is not in this group!";
+                }
+            }
+            /*function findName() {
+                let myName = document.getElementById('name').value;
+                const upNames = names.map(name=>name.toUpperCase());
+                let myUpName = myName.toUpperCase();
+                upNames.includes(myUpName) === true ? document.getElementById('nameLog').innerHTML = "Yes, " + myName + " is in this group!" : document.getElementById('nameLog').innerHTML = "No, " + myName + " is not in this group!";
+            }*/
+        </script>
+    </div>
+
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 5.1</h3>
+        <button onclick=randomFruits();>random fruit</button>
+        <div id="fruitLog" style="margin: 1em;"></div>
+        <script>
+            // opgave 5.1
+            const numbers = [2,4,3,6,7,5,1,9,8,10];
+            console.log(numbers);
+            const fruits = ['apple','strawberry','grape','papaya','kiwi'];
+            console.log(fruits[0], fruits[1]);
+        
+            function randomFruits(index,value) {
+                let randomNumber = Math.floor(Math.random()*10);
+                console.log(randomNumber);
+                console.log(fruits.length);
+                let randomFruit = randomNumber % fruits.length;
+                document.getElementById('fruitLog').innerHTML = fruits[randomFruit];
+            }
+            fruits[0] = "pear";
+            console.log(fruits);
+            function changeIndex(arr, fromIndex, toIndex) {
+                var element = arr[fromIndex];
+                arr.splice(fromIndex,1);
+                arr.splice(toIndex, 0, element);
+            console.log(fruits);
+            }
+            changeIndex(fruits,0,1);
+        </script>
+    </div>
+
+    <div style="border: 1px solid black; margin: 1em; padding: .5em;">
+        <h3>opgave 5.2</h3>
+        <button onclick=loop52a();>5.1a | forEach</button>
+        <div id="loopLogA" style="margin: 1em;"></div>
+        <button onclick=loop52b1();>5.2b1 | for in</button>
+        <div id="loopLogB1" style="margin: 1em;"></div>
+        <button onclick=loop52b2();>5.2b2 | for of</button>
+        <div id="loopLogB2" style="margin: 1em;"></div>
+        <script>
+            // opgave 5.2a
+            const dutchSports = ['voetbal', 'hockey', 'schaatsen'];
+            let text = "";
+            function loop52a() {
+                dutchSports.forEach(loopA);
+                function loopA(item) {
+                    text += item + ', ' + '<br>';
+                    document.getElementById('loopLogA').innerHTML = text;
+                }
+            }
+            // opgave 5.2b1
+            let text2 = "";
+            function loop52b1() {
+                for(let x in dutchSports) {
+                    text2 += dutchSports[x] + ', ';
+                    document.getElementById('loopLogB1').innerHTML = text2;
+                }
+            }
+            // opgave 5.2b2
+            let text3 = "";
+            function loop52b2() {
+                for(let x of dutchSports) {
+                    text3 += x + ', ';
+                    document.getElementById('loopLogB2').innerHTML = text3;
+                }
+            }
+        </script>
+        <button onclick=loop52c();>5.2c | even number loop</button>
+        <div id="loopLogC" style="margin: 1em;"></div>
+        <div id="loopLogD" style="margin: 1em;"></div>
+        <script>
+            function loop52c() {
+                let i = '';
+                let text4 = '';
+                let text5 = '';
+                for(i = 0; i <=20; i++) {
+                    if(i % 2 === 0) {
+                        text4 += i + ',';
+                        document.getElementById('loopLogC').innerHTML = text4;
+                    }
+                    else {
+                        text5 += i + ',';
+                        document.getElementById('loopLogD').innerHTML = text5;
+                    }
+                }
+            }
+        </script>
+    </div>
+
+
+
+</body>
+</html>

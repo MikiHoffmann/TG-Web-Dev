@@ -24,8 +24,8 @@
     transition: .55s;
 }
 h2 {
-    transition: .6s;
     font-size: 40px;
+    transition: .6s;
 }
 .block:hover {
     border: 10px solid black;
@@ -33,7 +33,7 @@ h2 {
     transition: .6s;
 }
 .block:hover h2 {
-    transition: .6s;
     transform: scale(0.8);
     text-shadow: 2px 2px 4px rgb(39, 37, 37);
+    transition: .6s;
 }
