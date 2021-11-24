@@ -150,19 +150,26 @@
         <div id="loopLogD" style="margin: 1em;"></div>
         <script>
             function loop52c() {
-                let i = '';
+                let i;
+                let x;
+                let loopEven = '';
+                let loopOdd = '';
                 let text4 = '';
                 let text5 = '';
-                for(i = 0; i <=20; i++) {
-                    if(i % 2 === 0) {
-                        text4 += i + ',';
-                        document.getElementById('loopLogC').innerHTML = text4;
+                for(x = 0; x < 3; x++) {
+                    for(i = 0; i <= 20; i++) {
+                        if(i % 2 === 0) {
+                            loopEven += i + ' ';
+                        }
+                        else {
+                            loopOdd += i + ' ';
+                        }
                     }
-                    else {
-                        text5 += i + ',';
-                        document.getElementById('loopLogD').innerHTML = text5;
-                    }
+                    text4 += loopEven + '<br>';
+                    text5 += loopOdd + '<br>';
                 }
+                document.getElementById('loopLogC').innerHTML = text4;
+                document.getElementById('loopLogD').innerHTML = text5;
             }
         </script>
     </div>
