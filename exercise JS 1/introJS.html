@@ -207,8 +207,40 @@
 
             // 5.2h
             const bubbleSortArr = [2,7,5,10,4,9,3,1,8,6];
-
+            console.log(bubbleSortArr);
+            // bubble sort one
+            function bubbleSort(arr) {
+                const sortedArr = Array.from(arr);
+                for(j = 0; j < arr.length; j++) {
+                    for(let i = 0; i < arr.length; i++) {
+                        if(arr[i - 1] > arr[i]) {
+                            [arr[i], arr[i - 1]] = [arr[i - 1], arr[i]];
+                        }
+                    }
+                }
+                return arr;
+            }
+            bubbleSort(bubbleSortArr);
+            console.log(bubbleSortArr);
+            // bubblesort two
+            function bubbleSort2(arr) {
+                const sortedArr = Array.from(arr);
+                let swap;
+                do {
+                    swap = false;
+                    for(let i = 0; i < arr.length; i++) {
+                        if(arr[i] < arr[i - 1]) {
+                            [arr[i], arr[i - 1]] = [arr[i - 1], arr[i]];
+                            swap = true;
+                        }
+                    }
+                } while(swap);
+                return arr;
+            }
+            bubbleSort2(bubbleSortArr);
+            console.log(bubbleSortArr);
             
+
         </script>
     </div>
 
