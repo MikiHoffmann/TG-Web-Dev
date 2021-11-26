@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+</head>
+<body>
+    <!-- Opdracht 6.1: Objects -->
+    <script>
+    // 6.1a
+    //Maak meerdere objects Pet met een naam en een soort. Maak een ander dier met elk van de 5 soorten constructor uit de voorbeelden en log deze in de console.Zie je een onverwachte property?
+
+// object constructor
+let objectConst = new Object()
+objectConst.name = 'Misha'
+objectConst.species = 'cat'
+console.log(objectConst.name +' is a ' + objectConst.species)
+let mySecondPet = new Object('Lala','rabbit')
+console.log(mySecondPet.name)
+
+// literal constructor
+let literalConst = {
+    name: 'Misha',
+    species: 'cat'
+}
+console.log(literalConst.name + ' is a ' + literalConst.species)
+literalConst.name = 'Lala'
+literalConst.species = 'rabbit'
+console.log(literalConst.name + ' is a ' + literalConst.species)
+
+// function constructor
+function functionConst(name,species) {
+    this.name = name,
+    this.species = species
+}
+let myPet = []
+myPet[0] = new functionConst('Misha','cat')
+myPet[1] = new functionConst('Lala','rabbit')
+console.log(myPet[0].name + ' is a ' + myPet[0].species)
+console.log(myPet[1].name + ' is a ' + myPet[1].species)
+
+// singleton constructor
+let singletonConst = new function() {
+    this.name = 'Misha',
+    this.species = 'cat'
+}
+console.log(singletonConst.name + ' is a ' + singletonConst.species)
+singletonConst.name = 'Lala'
+singletonConst.species = 'rabbit'
+console.log(singletonConst.name + ' is a ' + singletonConst.species)
+
+// class constructor
+class classConst {
+    constructor(name,species) {
+        this.name = name,
+        this.species = species
+    }
+}
+let lastPet = []
+lastPet[0] = new classConst('Misha','cat')
+lastPet[1] = new classConst('Lala','rabbit')
+
+    // De laatste veelgebruikte manier om Objecten aan te maken is met Object.create()
+    // 6.1b
+    //Gebruik Object.create() om een Object aan te maken. Doe dit voor elke Pet die je in de vorige opdracht hebt gemaakt, en log ze in de console. Valt er iets op aan de prototype?
+const newPet = Object.create(literalConst)
+newPet.name = 'Fifi'
+newPet.species = 'chiwawa'
+console.log(newPet.name + ' is an anoying little ' + newPet.species)
+    // 6.1c
+    //Maak een array met 10 Person Objects, die een naam en leeftijd hebben. Gebruik vervolgens Array methods om je personen te sorteren op leeftijd.
+class allPersons {
+    constructor(name,age) {
+        this.name = name
+        this.age = age
+    }
+}
+let person = []
+person[0] = new allPersons('Miki',45)
+person[1] = new allPersons('Oscar',41)
+person[2] = new allPersons('Gabriel',44)
+person[3] = new allPersons('Sjoerd',33)
+person[4] = new allPersons('Roy',30)
+person[5] = new allPersons('Hennie',55)
+person[6] = new allPersons('Mariet',62)
+person[7] = new allPersons('Ruben',34)
+person[8] = new allPersons('Peter',58)
+person[9] = new allPersons('Cindy',51)
+
+let onePerson = person.name + ': ' + person.age
+let allThePersons = []
+for(let i = 0; i < person.length; i++) {
+    allThePersons += onePerson
+}
+console.log(allThePersons)
+
+    // Opdracht 6.2:
+    // We oefenen met nested Objects.
+
+    // Maak een Club object dat het volgende bijhoudt:
+    // Naam
+    // Type club
+    // Aantal :Leden
+
+    // Maak een Contactinformatie object aan en voeg die toe aan elk Club object. De Contactinformatie houdt het volgende bij:
+    // Adres
+    // Telefoonnummer
+    // Contactpersoon
+
+    // Maak een array met 5 verschillende Clubs aan. Itereer door het array heen en log voor elke Club de naam, het telefoonnummer en de contactpersoon.
+    </script>
+</body>
+</html>
