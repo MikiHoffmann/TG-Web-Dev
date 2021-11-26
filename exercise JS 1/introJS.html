@@ -240,6 +240,62 @@
             bubbleSort2(bubbleSortArr);
             console.log(bubbleSortArr);
             
+            // opgave 5.3
+            const sportsArr = ['voetbal', 'hockey', 'schaatsen'];
+            console.log(sportsArr);
+            // 5.3a
+            sportsArr.push('zeilen', 'zwemmen');
+            console.log(sportsArr);
+            // 5.3b
+            sportsArr.unshift('volleybal');
+            console.log(sportsArr);
+            // 5.3c
+            const ballSportsArr = sportsArr.slice(0, 3);
+            console.log(ballSportsArr);
+            // 5.3d
+            sportsArr.splice(0,3);
+            console.log(sportsArr);
+            // 5.3e
+            ballSportsArr.sort();
+            console.log(ballSportsArr);
+            sportsArr.sort();
+            console.log(sportsArr);
+            // 5.3f
+            for(i of sportsArr) {
+                console.log(i);
+            }
+            for(i of ballSportsArr) {
+                console.log(i);
+            }
+            // 5.3g
+            const sportsLength = [];
+            for(i of sportsArr) {
+                let valueLenght;
+                valueLength = i.length;
+                sportsLength.push(valueLength);
+            }
+            console.log(sportsLength);
+            // opdracht 5.4 array-like objects
+            const myArray = ['house', 'for', 'sale', 'now'];
+            console.log(myArray);
+            // 5.4a from()
+            const myNewArray = Array.from(myArray);
+            myNewArray.push('!');
+            console.log(myNewArray);
+            // 5.4b filter()
+            const filterArr = myNewArray.filter(word => word.length === 3);
+            console.log(filterArr);
+            // 5.4c find()
+            const findArr = myNewArray.find(word => word.length > 4);
+            console.log(findArr);
+            // 5.4d some()
+            const letter = myNewArray.some(element => element.includes('o'))
+            console.log((letter))
+            // 5.4e every()
+            const letterAll = myNewArray.every(element => element.includes('o'))
+            console.log((letterAll))
+            // 5.4f includes()
+            console.log(myNewArray.includes('now'))
 
         </script>
     </div>
