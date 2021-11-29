@@ -89,13 +89,17 @@ person[7] = new allPersons('Ruben',34)
 person[8] = new allPersons('Peter',58)
 person[9] = new allPersons('Cindy',51)
 
-let onePerson = person.name + ': ' + person.age
-let allThePersons = []
+person.sort(function(a, b) {
+    return a.age - b.age;
+});
+
 for(let i = 0; i < person.length; i++) {
-    allThePersons += onePerson
-}
+    let onePerson = person[i].name + ': ' + person[i].age
+    let allThePersons = []
+        allThePersons += onePerson
 console.log(allThePersons)
 
+}
     // Opdracht 6.2:
     // We oefenen met nested Objects.
 
