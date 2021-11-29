@@ -69,6 +69,7 @@ const newPet = Object.create(literalConst)
 newPet.name = 'Fifi'
 newPet.species = 'chiwawa'
 console.log(newPet.name + ' is an anoying little ' + newPet.species)
+
     // 6.1c
     //Maak een array met 10 Person Objects, die een naam en leeftijd hebben. Gebruik vervolgens Array methods om je personen te sorteren op leeftijd.
 class allPersons {
@@ -103,17 +104,53 @@ console.log(allThePersons)
     // Opdracht 6.2:
     // We oefenen met nested Objects.
 
+    // 6.2a
     // Maak een Club object dat het volgende bijhoudt:
     // Naam
     // Type club
     // Aantal :Leden
+function allClubs(clubName,clubType,memberCount,clubInfo) {
+        this.clubName = clubName;
+        this.clubType = clubType;
+        this.memberCount = memberCount;
+        this.clubInfo = clubInfo;
+}
 
+    // 6.2b
     // Maak een Contactinformatie object aan en voeg die toe aan elk Club object. De Contactinformatie houdt het volgende bij:
     // Adres
     // Telefoonnummer
     // Contactpersoon
+function contactInfo(adres,phone,contactPerson) {
+        this.adres = adres;
+        this.phone = phone;
+        this.contactPerson = contactPerson;
+}
+const club1Info = new contactInfo('street 1','0612345678-1','Kenny');
+const club2Info = new contactInfo('street 2','0612345678-2','Steve');
+const club3Info = new contactInfo('street 3','0612345678-3','Maria');
+const club4Info = new contactInfo('street 4','0612345678-4','Pete');
+const club5Info = new contactInfo('street 5','0612345678-5','Bob');
 
+    // 6.2c
     // Maak een array met 5 verschillende Clubs aan. Itereer door het array heen en log voor elke Club de naam, het telefoonnummer en de contactpersoon.
+let clubs = [];
+clubs[0] = new allClubs('club1','hockeyclub',123,club1Info);
+clubs[1] = new allClubs('club2','tennisclub',287,club2Info);
+clubs[2] = new allClubs('club3','swimclub',167,club3Info);
+clubs[3] = new allClubs('club4','poloclub',332,club4Info);
+clubs[4] = new allClubs('club5','rowingclub',564,club5Info);
+
+console.log(clubs[0].clubName);
+
+for(let i = 0; i < clubs.length; i++) {
+    let showClubContact;
+    let showAllClubContact = [];
+    showClubContact = clubs[i].clubName + ': ' + clubs[i].clubInfo.phone + ', ' + clubs[i].clubInfo.contactPerson;
+    showAllClubContact += showClubContact;
+    console.log(showAllClubContact);
+}
+
     </script>
 </body>
 </html>
