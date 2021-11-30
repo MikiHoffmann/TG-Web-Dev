@@ -54,23 +54,39 @@ h1 {
 #carrouselContainer {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     height: 37.5em;
     width: 31.25em;
     background-color: transparent;
     border: 3px solid rgb(44, 4, 4);
     border-radius: 1em;
-    box-shadow: inset 4px 4px 8px rgb(0,0,0), inset -4px -4px 8px rgb(0,0,0);
 }
 .imgTemplate {
-    display: block;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 37.5em;
     width: 31.25em;
     border-radius: 1em;
+    transition: .6s;
     z-index: 100;
+}
+.imgTemplate::before {
+    content: attr(data-prev-img);
+    transform: translate(0%,31.25em);
+}
+.imgTemplate::after {
+    content: attr(data-next-img);
+    transform: translate(0%, -31.25em);
+}
+.animNext {
+    animation: next 0.65s 0.085s;
+}
+@keyframes next {
+    from{transform: translate(0%, 0);}
+    to{transform: translate(0%, 31.25);}
 }
