@@ -3,9 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
+html {
     height: 100%;
-    width: 100%;
 }
 body {
     background-color: rgb(90,90,90);
@@ -13,80 +12,70 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(255,255,255);
     text-shadow: 3px 3px 5px rgb(0,0,0);
+    
+}
+.carrouselSection {
+    position: relative;
+    height: 60vw;
+    width: 80%;
+    margin: 2em auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-items: center;
+    overflow: hidden;
 }
 .carrouselButton {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 1em;
-    height: 4em;
-    width: 4em;
+    height: 100%;
+    width: 10%;
     background-color: rgb(44, 43, 43);
     color: rgb(255,255,255);
     text-shadow: 3px 3px 5px rgb(0,0,0);
-    border: 1px solid rgb(255,255,255);
-    border-radius: 50%;
     box-shadow: 5px 5px 9px rgb(0,0,0);
     cursor: pointer;
+    z-index: 1;
 }
-#carrouselSection {
+.carrouselContainer {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 75%;
-    width: 75%;
-    background-color: rgb(44, 43, 43);
-    border: 3px solid rgb(255,255,255);
-    border-radius: 3em;
+    height: auto;
+    width: 100%;
     box-shadow: 5px 5px 9px rgb(0,0,0);
-}
-h1 {
-    margin: 0 auto 1em auto;
-    width: fit-content;
-}
-#carrouselContainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-    height: 37.5em;
-    width: 31.25em;
-    background-color: transparent;
-    border: 3px solid rgb(44, 4, 4);
-    border-radius: 1em;
+    transform-style: preserve-3d;
 }
-.imgTemplate {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 37.5em;
-    width: 31.25em;
-    border-radius: 1em;
-    transition: .6s;
-    z-index: 100;
+.carrouselImg {
+    display: inline-block;
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    height: 100%;
+    width: auto;
+    transition: .5s,;
 }
-.imgTemplate::before {
-    content: attr(data-prev-img);
-    transform: translate(0%,31.25em);
+.carrouselImg.prev {
+    transform: translate(-100%);
 }
-.imgTemplate::after {
-    content: attr(data-next-img);
-    transform: translate(0%, -31.25em);
+.carrouselImg.next {
+    transform: translate(100%);
 }
 .animNext {
-    animation: next 0.65s 0.085s;
+    animation-name: next;
+    animation-duration: .6s;
 }
 @keyframes next {
-    from{transform: translate(0%, 0);}
-    to{transform: translate(0%, 31.25);}
+    from {transform: translate(0%);}
+    to {transform: translate(100%);}
+}
+.animPrev {
+    animation-name: prev;
+    animation-duration: .6s;
+}
+@keyframes prev {
+    from {transform: translate(0%);}
+    to {transform: translate(-100%);}
 }

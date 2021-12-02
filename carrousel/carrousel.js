@@ -1,31 +1,38 @@
+// first put all the images in the document
+
+const images = [
+    "orangeSleeve.jpg",
+    "orangeBlazer.jpg",
+    "insidePocket.png",
+    "cancanTorso.png"
+];
+let i = 0;
+let slide = document.querySelector('.carrouselContainer');
+slide.innerHTML += '<img class="carrouselImg" src="images/' + images[i] + '"/>'
+
+
 const prevOption = document.getElementById('prevButton');
 const nextOption = document.getElementById('nextButton');
-const images = [
-    'orangeSleeve.jpg',
-    'orangeBlazer.jpg',
-    'insidePocket.png',
-    'cancanTorso.png'
-]
-let i = 0;
-let currentSlide = document.getElementById('imgTemplate');
-
-currentSlide.innerHTML = '<img src="images/' + images[i] + '"/>';
-
 nextOption.onclick = showNext;
 prevOption.onclick = showPrev;
 
 function showNext() {
     i = i + 1;
     i = i % images.length;
-    currentSlide.dataset.nextImg = images[i];
+    slide.classList.add('animNext');
     setTimeout(() => {
-        currentSlide.innerHTML = '<img src="images/' + images[i] + '"/>';
-    }, 500);
+        slide.innerHTML += '<img class="carrouselImg"src="images/' + images[i] + '"/>';
+        slide.classList.remove('animNext');
+    }, 700);
     
 };
 function showPrev() {
     if(i === 0) {i = images.length}
-    i = i - 1;
-    i = i % images.length;
-    currentSlide.innerHTML = '<img src="images/' + images[i] + '"/>';
+    i = i + 1;
+    i = i % images.length; 
+    slide.classList.add('animPrev');
+    setTimeout(() => {
+        slide.innerHTML = '<img class="carrouselImg"src="images/' + images[i] + '"/>';
+        slide.classList.remove('animPrev');
+    }, 700);
 };
