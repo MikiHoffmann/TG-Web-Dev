@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -26,18 +27,25 @@ span {
 input {
   border-radius: 10px;
   border: 1px solid black;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.21);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.21);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.21);
   padding: 1rem;
   margin-bottom: 3rem;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
   transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
   cursor: pointer;
   width: 20rem;
 }
+
 input:hover {
-  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .container {
+  display: -ms-grid;
   display: grid;
   place-content: center;
   margin: 0 auto;
@@ -47,4 +55,5 @@ input:hover {
 .counter {
   text-align: center;
   padding-bottom: 2rem;
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */

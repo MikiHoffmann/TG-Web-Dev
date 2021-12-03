@@ -1,0 +1,18 @@
+
+
+.animNext {
+    animation-name: next;
+    animation-duration: .6s;
+}
+@keyframes next {
+    from {transform: translate(0%);}
+    to {transform: translate(100%);}
+}
+.animPrev {
+    animation-name: prev;
+    animation-duration: .6s;
+}
+@keyframes prev {
+    from {transform: translate(0%);}
+    to {transform: translate(-100%);}
+}

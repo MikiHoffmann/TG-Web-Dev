@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #5a5a5a;
+  font-size: 1em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+}
+
+.carrouselSection {
+  position: relative;
+  height: 40vw;
+  max-width: 50%;
+  margin: 2em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.carrouselButton {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 1em;
+  height: 40vw;
+  width: 6vw;
+  background-color: transparent;
+  opacity: .6;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  border: none;
+  border-top: 20vw solid transparent;
+  border-bottom: 20vw solid transparent;
+  cursor: pointer;
+  z-index: 400;
+}
+
+#prevButton {
+  left: 0;
+  border-right: 6vw solid black;
+}
+
+#nextButton {
+  right: 0;
+  border-left: 6vw solid black;
+}
+
+.carrouselContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: 5px 5px 9px black;
+          box-shadow: 5px 5px 9px black;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.carrouselImg {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  height: 100%;
+  width: auto;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  opacity: 1;
+}
+
+.animNext {
+  -webkit-animation-name: next;
+          animation-name: next;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+}
+
+@-webkit-keyframes next {
+  from {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translate(100%);
+            transform: translate(100%);
+  }
+}
+
+@keyframes next {
+  from {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translate(100%);
+            transform: translate(100%);
+  }
+}
+
+.animPrev {
+  -webkit-animation-name: prev;
+          animation-name: prev;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+}
+
+@-webkit-keyframes prev {
+  from {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
+}
+
+@keyframes prev {
+  from {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  to {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
+}
+/*# sourceMappingURL=main.css.map */
