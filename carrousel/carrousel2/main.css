@@ -94,9 +94,6 @@ body {
   overflow: hidden;
   height: 100%;
   width: auto;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  opacity: 1;
 }
 
 .animNext {
@@ -104,6 +101,8 @@ body {
           animation-name: next;
   -webkit-animation-duration: .6s;
           animation-duration: .6s;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
 }
 
 @-webkit-keyframes next {
@@ -133,6 +132,8 @@ body {
           animation-name: prev;
   -webkit-animation-duration: .6s;
           animation-duration: .6s;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
 }
 
 @-webkit-keyframes prev {
