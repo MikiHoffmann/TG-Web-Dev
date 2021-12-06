@@ -60,10 +60,10 @@ body {
   height: 50%;
   width: 50%;
   overflow: hidden;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  z-index: -1;
   opacity: 0;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  z-index: -1;
   -webkit-box-shadow: 2px 2px 15px black;
           box-shadow: 2px 2px 15px black;
 }
@@ -76,21 +76,21 @@ body {
 }
 
 .carrouselItem.previous {
-  z-index: 1;
   opacity: 0.6;
   -webkit-transform: translate(-125%, -50%);
           transform: translate(-125%, -50%);
   -webkit-transform: rotate(15deg);
           transform: rotate(15deg);
+  z-index: 1;
 }
 
 .carrouselItem.next {
-  z-index: 2;
   opacity: 0.8;
   -webkit-transform: translate(25%, -50%);
           transform: translate(25%, -50%);
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
+  z-index: 2;
 }
 
 .navButton {
