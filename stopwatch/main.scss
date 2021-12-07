@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    color: rgb(212, 211, 211);
+}
+#stopwatchOutline {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25em;
+    width: 25em;
+    background-color: rgb(46, 44, 40);
+    box-shadow: 4px 4px 7px rgb(0,0,0);
+}
+#stopwatchRing {
+    height: 90%;
+    width: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 14px solid rgb(46,44,40);
+    border-radius: 50%;
+    box-shadow: 2px 2px 17px rgb(212, 211, 211), -2px -2px 17px rgb(212, 211, 211), inset 5px 5px 12px rgb(212, 211, 211), inset -5px -5px 12px rgb(212, 211, 211);
+}
+#stopwatch {
+    height: 92%;
+    width: 92%;
+    background-color: rgb(24, 5, 5);
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    border: 9px solid rgb(10, 5, 0);
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgb(0,0,0), inset 0px 0px 1px rgb(212, 211, 211), inset -0px -0px 1px rgb(212, 211, 211);
+}
+#logo {
+    grid-area: 2/4/3/8;
+    font-weight: bold;
+    text-align: center;
+}
+#display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.4em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgb(212, 211, 211);
+    grid-area: 4/1/7/11;
+}
+#controls {
+    grid-area: 7/1/10/11;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 1.2em;
+}
+.controlButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.6em;
+    width: 3.6em;
+    border-radius: 50%;
+    border: 2px solid rgb(212, 211, 211);
+    box-shadow: 1px 1px 2px rgb(0,0,0);
+}
+#startButton {
+    background-color: green;
+}
+#pauseButton {
+    background-color: gold;
+}
+#stopButton {
+    background-color: red;
+}
+#startIcon {
+    height: 2em;
+    width: 1.5em;
+    margin-left: .3em;
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    border-left: 1.5em solid rgb(0,0,0);
+}
+#pauseIcon {
+    height: 2em;
+    width: 1.5em;
+    border-top: none;
+    border-bottom: none;
+    border-left: .5em solid rgb(0,0,0);
+    border-right: .5em solid rgb(0,0,0);
+}
+#stopIcon {
+    height: 1.5em;
+    width: 1.5em;
+    border-left: 1.5em solid rgb(0,0,0);
+}

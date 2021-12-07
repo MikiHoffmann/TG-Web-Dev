@@ -1,1 +1,184 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  color: #d4d3d3;
+}
+
+#stopwatchOutline {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25em;
+  width: 25em;
+  background-color: #2e2c28;
+  -webkit-box-shadow: 4px 4px 7px black;
+          box-shadow: 4px 4px 7px black;
+}
+
+#stopwatchRing {
+  height: 90%;
+  width: 90%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 14px solid #2e2c28;
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 2px 17px #d4d3d3, -2px -2px 17px #d4d3d3, inset 5px 5px 12px #d4d3d3, inset -5px -5px 12px #d4d3d3;
+          box-shadow: 2px 2px 17px #d4d3d3, -2px -2px 17px #d4d3d3, inset 5px 5px 12px #d4d3d3, inset -5px -5px 12px #d4d3d3;
+}
+
+#stopwatch {
+  height: 92%;
+  width: 92%;
+  background-color: #180505;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (10%)[10];
+      grid-template-columns: repeat(10, 10%);
+  -ms-grid-rows: (10%)[10];
+      grid-template-rows: repeat(10, 10%);
+  border: 9px solid #0a0500;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 2px black, inset 0px 0px 1px #d4d3d3, inset 0px 0px 1px #d4d3d3;
+          box-shadow: 1px 1px 2px black, inset 0px 0px 1px #d4d3d3, inset 0px 0px 1px #d4d3d3;
+}
+
+#logo {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 4;
+  grid-area: 2/4/3/8;
+  font-weight: bold;
+  text-align: center;
+}
+
+#display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3.4em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 3px #d4d3d3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 10;
+  grid-area: 4/1/7/11;
+}
+
+#controls {
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 10;
+  grid-area: 7/1/10/11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0 1.2em;
+}
+
+.controlButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 3.6em;
+  width: 3.6em;
+  border-radius: 50%;
+  border: 2px solid #d4d3d3;
+  -webkit-box-shadow: 1px 1px 2px black;
+          box-shadow: 1px 1px 2px black;
+}
+
+#startButton {
+  background-color: green;
+}
+
+#pauseButton {
+  background-color: gold;
+}
+
+#stopButton {
+  background-color: red;
+}
+
+#startIcon {
+  height: 2em;
+  width: 1.5em;
+  margin-left: .3em;
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+  border-left: 1.5em solid black;
+}
+
+#pauseIcon {
+  height: 2em;
+  width: 1.5em;
+  border-top: none;
+  border-bottom: none;
+  border-left: 0.5em solid black;
+  border-right: 0.5em solid black;
+}
+
+#stopIcon {
+  height: 1.5em;
+  width: 1.5em;
+  border-left: 1.5em solid black;
+}
+/*# sourceMappingURL=main.css.map */
