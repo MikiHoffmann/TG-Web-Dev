@@ -48,12 +48,12 @@ body {
     border-radius: 50%;
     box-shadow: 1px 1px 2px rgb(0,0,0), inset 0px 0px 1px rgb(212, 211, 211), inset -0px -0px 1px rgb(212, 211, 211);
 }
-#logo {
+.logo {
     grid-area: 2/4/3/8;
     font-weight: bold;
     text-align: center;
 }
-#display {
+.display {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@ body {
     text-shadow: 1px 1px 3px rgb(212, 211, 211);
     grid-area: 4/1/7/11;
 }
-#controls {
+.controls {
     grid-area: 7/1/10/11;
     display: flex;
     align-items: flex-start;
@@ -80,16 +80,16 @@ body {
     border: 2px solid rgb(212, 211, 211);
     box-shadow: 1px 1px 2px rgb(0,0,0);
 }
-#startButton {
+.startButton {
     background-color: green;
 }
-#pauseButton {
+.pauseButton {
     background-color: gold;
 }
-#stopButton {
+.stopButton {
     background-color: red;
 }
-#startIcon {
+.startIcon {
     height: 2em;
     width: 1.5em;
     margin-left: .3em;
@@ -97,7 +97,7 @@ body {
     border-bottom: 1em solid transparent;
     border-left: 1.5em solid rgb(0,0,0);
 }
-#pauseIcon {
+.pauseIcon {
     height: 2em;
     width: 1.5em;
     border-top: none;
@@ -105,7 +105,7 @@ body {
     border-left: .5em solid rgb(0,0,0);
     border-right: .5em solid rgb(0,0,0);
 }
-#stopIcon {
+.stopIcon {
     height: 1.5em;
     width: 1.5em;
     border-left: 1.5em solid rgb(0,0,0);
