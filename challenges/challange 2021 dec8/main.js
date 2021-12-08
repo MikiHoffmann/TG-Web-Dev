@@ -74,7 +74,7 @@ window.onclick = function(event) {
 function hidePopUp() {
     popUp.classList.remove('showPopUp');
     popUp.classList.add('hidePopUp');
-    setTimeout(() => {;
+    setTimeout(() => {
         popUp.removeChild(popUpDiv);
         popUp.classList.remove('hidePopUp');
         popUp.style.display = 'none';
