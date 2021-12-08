@@ -144,6 +144,7 @@ body {
   border: 2px solid #d4d3d3;
   -webkit-box-shadow: 1px 1px 2px black;
           box-shadow: 1px 1px 2px black;
+  cursor: pointer;
 }
 
 .startButton {
@@ -154,8 +155,15 @@ body {
   background-color: gold;
 }
 
-.stopButton {
+.resetButton {
   background-color: red;
+  color: black;
+  font-weight: bold;
+}
+
+.active {
+  -webkit-box-shadow: inset 2px 2px 15px rgba(212, 211, 211, 0.6), inset -2px -2px 15px rgba(212, 211, 211, 0.6);
+          box-shadow: inset 2px 2px 15px rgba(212, 211, 211, 0.6), inset -2px -2px 15px rgba(212, 211, 211, 0.6);
 }
 
 .startIcon {

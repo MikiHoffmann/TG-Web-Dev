@@ -79,6 +79,7 @@ body {
     border-radius: 50%;
     border: 2px solid rgb(212, 211, 211);
     box-shadow: 1px 1px 2px rgb(0,0,0);
+    cursor: pointer;
 }
 .startButton {
     background-color: green;
@@ -86,8 +87,13 @@ body {
 .pauseButton {
     background-color: gold;
 }
-.stopButton {
+.resetButton {
     background-color: red;
+    color: rgb(0,0,0);
+    font-weight: bold;
+}
+.active {
+    box-shadow: inset 2px 2px 15px rgba(212,211,211,0.6), inset -2px -2px 15px rgba(212,211,211,0.6);
 }
 .startIcon {
     height: 2em;
