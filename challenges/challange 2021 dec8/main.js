@@ -5,43 +5,79 @@ const popUp = document.getElementById("popUp");
 
 popUp.style.display = 'none';
 
-catButton.onclick =  showCat;
+catButton.onclick = showCat;
 dogButton.onclick =  showDog;
 pidgeonButton.onclick =  showPidgeon;
 
-let para = document.createElement('p');
-    popUp.appendChild(para);
+let popUpDiv = document.createElement('div');
+let popUpImg = document.createElement('img')
+let popUpClose = document.createElement('span');
+let popUpPara = document.createElement('p');
 
-let span = document.createElement('span');
-    span.innerHTML = 'X';
-
+function createPopUpElms() {
+    popUp.classList.toggle('showPopUp');
+    popUp.appendChild(popUpDiv);
+    popUpDiv.appendChild(popUpImg);
+    popUpImg.src = '';
+    popUpDiv.appendChild(popUpPara);
+    popUpPara.innerHTML = '';
+    popUpDiv.appendChild(popUpClose);
+    popUpClose.innerHTML = 'X';
+    popUpClose.onclick = hidePopUp;
+    popUp.style.display = "flex";
+}
 
 function showCat() {
-    popUp.classList.toggle('showPopUp');
-    para.innerHTML = '<img src="cat.jpg"/>' + 'dit is een kat';
-    para.appendChild(span);
-    popUp.style.display = "flex";
-    //span.onclick = popUp.style.display = 'none';
+    createPopUpElms();
+    popUpImg.src = 'cat.jpg';
+    let catQuotes = [
+        'dit is een kat',
+        'is dit een kat?',
+        'dit is geen duif',
+        'dit is geen hond',
+        'een echte kat'
+    ]
+    let catQuote = catQuotes[Math.floor(Math.random() * catQuotes.length)];
+    popUpPara.innerHTML = catQuote;
 }
 function showDog() {
-    popUp.classList.toggle('showPopUp');
-    para.innerHTML = '<img src="dog.jpg"/>' + 'dit is een hond';
-    popUp.style.display = "flex";
+    createPopUpElms();
+    popUpImg.src = 'dog.jpg';
+    let dogQuotes = [
+        'dit is een hond',
+        'is dit een hond?',
+        'dit is geen duif',
+        'dit is geen kat',
+        'een echte hond'
+    ]
+    let dogQuote = dogQuotes[Math.floor(Math.random() * dogQuotes.length)];
+    popUpPara.innerHTML = dogQuote;
 }
 function showPidgeon() {
-    popUp.classList.toggle('showPopUp');
-    para.innerHTML = '<img src="pidgeon.jpg"/>' + 'dit is een duif';
-    popUp.style.display = "flex";
+    createPopUpElms();
+    popUpImg.src = 'pidgeon.jpg';
+    let pidgeonQuotes = [
+        'dit is een duif',
+        'is dit een duif?',
+        'dit is geen kat',
+        'dit is geen hond',
+        'een echte duif'
+    ]
+    let pidgeonQuote = pidgeonQuotes[Math.floor(Math.random() * pidgeonQuotes.length)];
+    popUpPara.innerHTML = pidgeonQuote;
 }
 window.onclick = function(event) {
-    if(event.target == popUp){
-        popUp.classList.remove('showPopUp');
-        popUp.classList.add('hidePopUp');
-        setTimeout(() => {
-            popUp.classList.remove('hidePopUp');
-            popUp.style.display = 'none';
-        }, 800);
+    if(event.target == popUp) {
+        hidePopUp();
     }
 }
-
+function hidePopUp() {
+    popUp.classList.remove('showPopUp');
+    popUp.classList.add('hidePopUp');
+    setTimeout(() => {;
+        popUp.removeChild(popUpDiv);
+        popUp.classList.remove('hidePopUp');
+        popUp.style.display = 'none';
+    }, 600);
+}
 

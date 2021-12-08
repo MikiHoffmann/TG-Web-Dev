@@ -43,13 +43,14 @@ button {
     height: 100%;
     width: 100%;
     padding: 1em;
-    & p {
+    & div {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: red;
+        box-shadow: 3px 3px 6px rgb(0,0,0);
         padding: 1em;
         height: auto;
         width: 60%;
@@ -58,6 +59,10 @@ button {
             height: auto;
             width: 80%;
             margin: 1em;
+        }
+        & p {
+            width: 100%;
+            text-align: center;
         }
         & span {
             display: inline-block;
@@ -71,7 +76,7 @@ button {
 .hidePopUp {
     transition: .2s;
     animation-name: hidePopUp;
-    animation-duration: 2s;
+    animation-duration: .6s;
     animation-fill-mode: forwards;
     opacity: 1;
 }
@@ -82,7 +87,7 @@ button {
 .showPopUp {
     transition: .2s;
     animation-name: showPopUp;
-    animation-duration: 2s;
+    animation-duration: .6s;
     animation-fill-mode: forwards;
     opacity: 0;
 }

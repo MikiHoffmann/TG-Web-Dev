@@ -74,7 +74,7 @@ button {
   padding: 1em;
 }
 
-.popUpLayout p {
+.popUpLayout div {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,19 +90,26 @@ button {
       -ms-flex-align: center;
           align-items: center;
   background-color: red;
+  -webkit-box-shadow: 3px 3px 6px black;
+          box-shadow: 3px 3px 6px black;
   padding: 1em;
   height: auto;
   width: 60%;
   font-size: 3em;
 }
 
-.popUpLayout p img {
+.popUpLayout div img {
   height: auto;
   width: 80%;
   margin: 1em;
 }
 
-.popUpLayout p span {
+.popUpLayout div p {
+  width: 100%;
+  text-align: center;
+}
+
+.popUpLayout div span {
   display: inline-block;
   position: absolute;
   top: .3em;
@@ -115,8 +122,8 @@ button {
   transition: .2s;
   -webkit-animation-name: hidePopUp;
           animation-name: hidePopUp;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 1;
@@ -145,8 +152,8 @@ button {
   transition: .2s;
   -webkit-animation-name: showPopUp;
           animation-name: showPopUp;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
