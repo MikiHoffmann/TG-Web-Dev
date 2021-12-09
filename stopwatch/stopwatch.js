@@ -23,13 +23,10 @@ function startCount() {
     pauseButton.classList.remove('active');
 }
 function pauseCount() {
-    if(interval) {
+    if(milliseconds > 0 || seconds > 0 || minutes > 0) {
         clearInterval(interval);
         startButton.classList.remove('active');
         pauseButton.classList.add('active');
-    }
-    if(!interval) {
-        pauseButton.classList.remove('active');
     }
     
 }
