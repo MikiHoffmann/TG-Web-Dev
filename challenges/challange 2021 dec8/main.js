@@ -1,3 +1,5 @@
+//challange 2021-12-8 | Mike & Miki
+
 const catButton = document.getElementById("cat");
 const dogButton = document.getElementById("dog");
 const pidgeonButton = document.getElementById("pidgeon");
