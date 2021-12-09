@@ -8,8 +8,8 @@ const popUp = document.getElementById("popUp");
 popUp.style.display = 'none';
 
 catButton.onclick = showCat;
-dogButton.onclick =  showDog;
-pidgeonButton.onclick =  showPidgeon;
+dogButton.onclick = showDog;
+pidgeonButton.onclick = showPidgeon;
 
 let popUpDiv = document.createElement('div');
 let popUpImg = document.createElement('img')
