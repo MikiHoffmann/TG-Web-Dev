@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  /*overflow: hidden;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.galleryWrapper {
+  position: relative;
+  height: auto;
+  width: 60%;
+  overflow: hidden;
+  background-color: transparent;
+  -webkit-box-shadow: 3px 3px 7px black;
+          box-shadow: 3px 3px 7px black;
+}
+
+.galleryContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.galleryContainer img {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: block;
+  opacity: 0;
+}
+
+.galleryContainer.active {
+  opacity: 1;
+}
+
+.galleryContainer.previous {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.galleryContainer.next {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.buttonContainer {
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.slideButton {
+  position: absolute;
+  height: 100%;
+  width: 5em;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+}
+
+.slideButton:nth-of-type(1) {
+  left: 0;
+}
+
+.slideButton:nth-of-type(2) {
+  right: 0;
+}
+/*# sourceMappingURL=main.css.map */
