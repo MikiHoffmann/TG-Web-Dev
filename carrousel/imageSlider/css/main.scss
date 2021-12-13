@@ -25,6 +25,10 @@ body {
     @media only screen and (min-width: 31.25em) {
         width: 60%;
     }
+    @media only screen and (orientation: landscape) and (max-device-height: 31.25em) {
+        height: 90%;
+        width: auto;
+    }
 }
 .galleryContainer {
     position: relative;
@@ -72,17 +76,23 @@ body {
 }
 .slideButton {
     position: absolute;
-    height: 100%;
+    top: 5%;
+    height: 90%;
     width: 8%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(70, 69, 71, 0.4);
     border: none;
     color: rgb(255,255,255);
     z-index: 3;
+    &:hover {
+        background-color: rgba(37,36,36,0.6);
+    }
     cursor: pointer;
     &:nth-of-type(1) {
-        left: 0;
+        left: 2%;
+        clip-path: polygon(0% 50%,100% 0%,100% 100%);
     }
     &:nth-of-type(2) {
-        right: 0;
+        right: 2%;
+        clip-path: polygon(0% 0%,0% 100%,100% 50%);
     }
 }

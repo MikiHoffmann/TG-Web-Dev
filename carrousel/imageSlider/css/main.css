@@ -43,6 +43,13 @@ body {
   }
 }
 
+@media only screen and (orientation: landscape) and (max-device-height: 31.25em) {
+  .galleryWrapper {
+    height: 90%;
+    width: auto;
+  }
+}
+
 .galleryContainer {
   position: relative;
   top: 0;
@@ -104,20 +111,29 @@ img.next {
 
 .slideButton {
   position: absolute;
-  height: 100%;
+  top: 5%;
+  height: 90%;
   width: 8%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(70, 69, 71, 0.4);
   border: none;
   color: white;
   z-index: 3;
   cursor: pointer;
 }
 
+.slideButton:hover {
+  background-color: rgba(37, 36, 36, 0.6);
+}
+
 .slideButton:nth-of-type(1) {
-  left: 0;
+  left: 2%;
+  -webkit-clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+          clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 }
 
 .slideButton:nth-of-type(2) {
-  right: 0;
+  right: 2%;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+          clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
 }
 /*# sourceMappingURL=main.css.map */
