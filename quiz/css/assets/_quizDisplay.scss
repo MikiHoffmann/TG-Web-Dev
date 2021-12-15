@@ -1,0 +1,46 @@
+.quizQuestionDisplay {
+    @include initialSetting;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-bottom: .5em;
+    background-color: var(--lightFontClr);
+    font-size: 1.7em;
+    text-align: center;
+    border-radius: 1em;
+}
+.quizAwnserDisplay {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+.label {
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+.hideRadio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.customRadio {
+    @include lightSetting;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.8em;
+    border-radius: 50%;
+}
+.awnserOption {
+    @include lightSetting;
+    position: relative;
+    height: 1.5em;
+    width: 100%;
+    margin-left: .5em;
+    text-align: center;
+}

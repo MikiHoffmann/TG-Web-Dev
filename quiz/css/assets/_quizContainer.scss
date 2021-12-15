@@ -1,0 +1,45 @@
+.quizBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: var(--mainBackTrans);
+    transition: .4s;
+    z-index: 2;
+    animation-name: showQuiz;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes showQuiz {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.quizContainer {
+    @include initialSetting;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-items: space-around;
+    align-items: center;
+    max-height: 75%;
+    padding: 1em;
+    &  h1 {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
+}
+.button {
+    @include lightSetting;
+    width: 5em;
+    margin-bottom: 3em;
+    padding: .2em;
+    font-size: .8em;
+    border-radius: .5em;
+    align-self: flex-end;
+}
