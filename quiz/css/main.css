@@ -255,6 +255,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   cursor: pointer;
   -webkit-user-select: none;
@@ -303,5 +307,9 @@ body {
   width: 100%;
   margin-left: .5em;
   text-align: center;
+}
+
+.label input:checked ~ .customRadio, .label input:checked ~ .awnserOption {
+  background-color: blue;
 }
 /*# sourceMappingURL=main.css.map */

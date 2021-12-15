@@ -17,6 +17,7 @@
 .label {
     position: relative;
     display: flex;
+    flex-direction: row;
     width: 100%;
     cursor: pointer;
     user-select: none;
@@ -43,4 +44,7 @@
     width: 100%;
     margin-left: .5em;
     text-align: center;
+}
+.label input:checked ~ .customRadio, .label input:checked ~ .awnserOption  {
+    background-color: blue;
 }

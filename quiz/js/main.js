@@ -34,59 +34,24 @@ function createQuizLayout() {
     quizQuestionDisplay.classList.add('quizQuestionDisplay');
     quizAwnserDisplay.classList.add('quizAwnserDisplay');
 }
-
-function fillQuizSections() {
-
-    const labelTemplate = document.createElement('label');
-    const radioTemplate = document.createElement('input');
-    radioTemplate.type = 'radio';
-    radioTemplate.value = '';
-    const customRadioTemplate = document.createElement('span');
-    customRadioTemplate.innerText = 'x';
-    const optionTemplate = document.createElement('span');
-    optionTemplate.innerText = radioTemplate.value;
-    labelTemplate.appendChild(radioTemplate);
-    labelTemplate.appendChild(customRadioTemplate);
-    labelTemplate.appendChild(optionTemplate);
-
-    labelTemplate.classList.add('label');
-    radioTemplate.classList.add('hideRadio');
-    customRadioTemplate.classList.add('customRadio');
-    optionTemplate.classList.add('awnserOption');
-
-    let questionNumber = '1';
+let questionNumber = '1';
     let question = '10 + 5';
     let right = '15';
     let wrong = ['1','33','-4','12'];
+    wrong.push(right);
+    let allAwnsers = wrong;
+    const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-    let awnser;
-    let template = `<label class='label'><input class='hideRadio' type='radio' value='${awnser}'/><span class='customRadio'>x</span><span class='awnserOption'>${awnser}</span><label>`;
-    let allLabels = [];
-for(let i = 0; i < wrong.length; i++) {
-    let label = template;
-    label.replace(`${awnser}`, wrong[i]);
-    allLabels = document.createElement('span');
-    allLabels.innerHTML += label;
-    quizAwnserDisplay.appendChild(allLabels);
-}
-    
+function fillQuizSections() {
+    for(let i = 0; i < allAwnsers.length; i++) {
+        let allLabels = [];
+        let template = `<label class='label'><input class='hideRadio' type='radio' name='choice' value=''/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption'>${allAwnsers[i]}</span><label>`;
+        let label = template;
+        allLabels = document.createElement('span');
+        allLabels.innerHTML += label;
+        quizAwnserDisplay.appendChild(allLabels);
+        console.log(label);
+    }
     quizRoundDisplay.innerText = 'question ' + questionNumber + ' of ' + wrong.length;
     quizQuestionDisplay.innerText = question;
-    /*
-    for(let i = 0; i < wrong.length; i++) {
-        let label = document.createElement('span');
-        label.innerHTML = labelTemplate;
-        label.getElementsByClassName('hideRadio');
-        label.getElementsByClassName('customRadio')
-    }
-
-
-    let allAwnsers = [];
-    let options = wrong.length +1;
-
-    const alpha = Array.from(Array(26)).map((e, i) => i + 65);
-    const alphabet = alpha.map((x) => String.fromCharCode(x));
-    console.log(alphabet);
-
-    */
 }
