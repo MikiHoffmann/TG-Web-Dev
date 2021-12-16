@@ -4,6 +4,7 @@ quizStarter.onclick = createQuiz;
 function createQuiz() {
     createQuizLayout();
     fillQuizSections();
+    createButtons();
 }
 const quizBackground = document.createElement('div');
 
@@ -27,14 +28,41 @@ let questionNumber = '1';
 function fillQuizSections() {
     for(let i = 0; i < allAwnsers.length; i++) {
         let allLabels = [];
-        let template = `<input class='hideRadio' type='radio' name='choice' value=''/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption'>${allAwnsers[i]}</span>`;
+        let template = `<input class='hideRadio choice' type='radio' name='choice' value='${allAwnsers[i]}'/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption choice'>${allAwnsers[i]}</span>`;
         let label = template;
         allLabels = document.createElement('label');
         allLabels.classList.add('label');
         allLabels.innerHTML += label;
         quizAwnserDisplay.appendChild(allLabels);
-        console.log(label);
     }
     quizRoundDisplay.innerText = 'question ' + questionNumber + ' of ' + wrong.length;
     quizQuestionDisplay.innerText = question;
+}
+function createButtons() {
+    const buttons = [
+        {id:'previous',text:'previous'},
+        {id:'check',text:'check my awnser'},
+        {id:'next',text:'next'}
+    ];
+    for(let i = 0; i < buttons.length; i++) {
+        let buttonTemplate = `<button id='${buttons[i].id}' class='button'>${buttons[i].text}</button>`;
+        let button = buttonTemplate;
+        buttonDisplay.innerHTML += button;
+    }
+    const check = document.getElementById('check');
+console.log(check);
+check.onclick = checkAwnser;
+}
+
+
+function checkAwnser() {
+    let checked = document.getElementsByClassName('choice');
+    for(let i = 0; i < checked.length; i++) {
+        if((checked[i].checked === true) && (checked[i].value === right)) {
+            checked[i].parentElement.classList.toggle('awnserRight');
+        }
+        else if(checked[i].checked === true) {
+            checked[i].parentElement.classList.toggle('awnserWrong');
+        }
+    }
 }
