@@ -1,26 +1,37 @@
 .quizQuestionDisplay {
-    @include initialSetting;
+    @include lightSetting;
     display: flex;
     flex-direction: column;
     width: 95%;
-    margin-bottom: .5em;
+    margin: .5em 0;
+    padding: .3em;
     background-color: var(--lightFontClr);
+    border: 1px ridge var(--mainFontClr);
+    color: var(--mainFontClr);
     font-size: 1.7em;
+    font-weight: bold;
     text-align: center;
-    border-radius: 1em;
 }
 .quizAwnserDisplay {
     display: flex;
     flex-direction: column;
     width: 95%;
+    margin: .5em 0;
 }
 .label {
     position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    height: 2em;
     width: 100%;
+    margin-top: .5em;
+    font-weight: bold;
     cursor: pointer;
     user-select: none;
+}
+.label:nth-of-type(even) {
+    flex-direction: row-reverse;
 }
 .hideRadio {
     position: absolute;
@@ -40,11 +51,12 @@
 .awnserOption {
     @include lightSetting;
     position: relative;
-    height: 1.5em;
+    height: 2em;
     width: 100%;
-    margin-left: .5em;
+    margin: 0 .5em;
+    padding: .5em;
     text-align: center;
 }
 .label input:checked ~ .customRadio, .label input:checked ~ .awnserOption  {
-    background-color: blue;
+    background-color: rgb(161, 199, 235);
 }

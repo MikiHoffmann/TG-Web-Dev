@@ -1,0 +1,20 @@
+:root {
+    --mainFontClr: rgb(0,0,0);
+    --lightFontClr: rgb(203, 221, 233);
+    --mainBack: rgba(5, 4, 7,0.8);
+    --mainBackTrans: rgba(5, 4, 7, 0.4);
+    --greenBack: rgb(70, 219, 70);
+    --redBack: rgb(230, 32, 32);
+    --lightBox: 0px 0px 10px var(--lightFontClr);
+    --glowBox: 6px 6px 20px var(--lightFontClr), -6px -6px 20px var(--lightFontClr), -6px 6px 20px var(--lightFontClr), 6px -6px 20px var(--lightFontClr);
+}
+@mixin initialSetting {
+    background-color: var(--mainBack);
+    color: var(--lightFontClr);
+    border: 1px ridge var(--lightFontClr);
+    box-shadow: var(--lightBox);
+}
+@mixin lightSetting {
+    background-color: var(--lightFontClr);
+    color: var(--mainFontClr);
+}

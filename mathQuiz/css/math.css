@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +14,7 @@ html {
 
 body {
   height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,28 +24,79 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Indie Flower', cursive;
+  background-image: url(../image/scienceBackground.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Josefin Slab', serif;
   font-size: 1em;
+  overflow: hidden;
 }
 
 :root {
   --mainFontClr: rgb(0,0,0);
-  --lightFontClr: rgb(255,200,200);
-  --mainBack: rgb(65, 77, 117);
-  --mainBackTrans: rgba(65,77,117,0.8);
-  --greenBack: rgb(12,173,12);
-  --redBack: rgb(223,9,9);
-  --darkBox: 4px 4px 20px rgb(0,0,0);
+  --lightFontClr: rgb(203, 221, 233);
+  --mainBack: rgba(5, 4, 7,0.8);
+  --mainBackTrans: rgba(5, 4, 7, 0.4);
+  --greenBack: rgb(70, 219, 70);
+  --redBack: rgb(230, 32, 32);
+  --lightBox: 0px 0px 10px var(--lightFontClr);
   --glowBox: 6px 6px 20px var(--lightFontClr), -6px -6px 20px var(--lightFontClr), -6px 6px 20px var(--lightFontClr), 6px -6px 20px var(--lightFontClr);
 }
 
-.quizWrapper {
+.quizBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: var(--mainBackTrans);
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 2;
+  -webkit-animation-name: showQuiz;
+          animation-name: showQuiz;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes showQuiz {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showQuiz {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.quizContainer {
   background-color: var(--mainBack);
-  color: var(--mainFontClr);
-  border: 2px solid var(--mainFontClr);
-  border-radius: 1.5em;
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
+  color: var(--lightFontClr);
+  border: 1px ridge var(--lightFontClr);
+  -webkit-box-shadow: var(--lightBox);
+          box-shadow: var(--lightBox);
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,24 +104,166 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  justify-items: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-height: 80%;
+  width: 85%;
+  padding: 1em;
+}
+
+.quizContainer h1 {
+  margin: .2em 0 .4em 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.button {
+  background-color: var(--lightFontClr);
+  color: var(--mainFontClr);
+  width: 5em;
+  margin-bottom: 3em;
+  padding: .2em;
+  font-size: .8em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.quizQuestionDisplay {
+  background-color: var(--lightFontClr);
+  color: var(--mainFontClr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 95%;
+  margin: .5em 0;
+  padding: .3em;
+  background-color: var(--lightFontClr);
+  border: 1px ridge var(--mainFontClr);
+  color: var(--mainFontClr);
+  font-size: 1.7em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.quizAwnserDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 95%;
+  margin: .5em 0;
+}
+
+.label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2em;
+  width: 100%;
+  margin-top: .5em;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.label:nth-of-type(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.hideRadio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.customRadio {
+  background-color: var(--lightFontClr);
+  color: var(--mainFontClr);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 6%;
+  height: 1.5em;
+  width: 1.8em;
+  border-radius: 50%;
+}
+
+.awnserOption {
+  background-color: var(--lightFontClr);
+  color: var(--mainFontClr);
+  position: relative;
+  height: 2em;
+  width: 100%;
+  margin: 0 .5em;
+  padding: .5em;
+  text-align: center;
+}
+
+.label input:checked ~ .customRadio, .label input:checked ~ .awnserOption {
+  background-color: #a1c7eb;
+}
+
+.quizWrapper {
+  background-color: var(--mainBack);
+  color: var(--lightFontClr);
+  border: 1px ridge var(--lightFontClr);
+  -webkit-box-shadow: var(--lightBox);
+          box-shadow: var(--lightBox);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10%;
+}
+
+.quizWrapper h1 {
+  margin-bottom: 1.5em;
 }
 
 .quizStarter {
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
+  font-family: 'Josefin Slab', serif;
   padding: .2em .4em;
   background-color: var(--lightFontClr);
-  border: none;
-  border-radius: 50%;
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
+  -webkit-box-shadow: var(--lightBox);
+          box-shadow: var(--lightBox);
   -webkit-animation-name: pulse;
           animation-name: pulse;
   -webkit-animation-duration: 1.5s;
@@ -126,190 +320,4 @@ body {
     border: 1px solid var(--lightFontClr);
   }
 }
-
-.quizBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  background-color: var(--mainBackTrans);
-  -webkit-transition: .4s;
-  transition: .4s;
-  z-index: 2;
-  -webkit-animation-name: showQuiz;
-          animation-name: showQuiz;
-  -webkit-animation-duration: .5s;
-          animation-duration: .5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes showQuiz {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes showQuiz {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.quizContainer {
-  background-color: var(--mainBack);
-  color: var(--mainFontClr);
-  border: 2px solid var(--mainFontClr);
-  border-radius: 1.5em;
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  justify-items: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-height: 75%;
-  padding: 1em;
-}
-
-.quizContainer h1 {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-}
-
-.button {
-  background-color: var(--lightFontClr);
-  color: var(--mainFontClr);
-  font-size: 1.5em;
-  border: 1px solid var(--mainFontClr);
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
-  width: 5em;
-  margin-bottom: 3em;
-  padding: .2em;
-  font-size: .8em;
-  border-radius: .5em;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-.quizQuestionDisplay {
-  background-color: var(--mainBack);
-  color: var(--mainFontClr);
-  border: 2px solid var(--mainFontClr);
-  border-radius: 1.5em;
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 95%;
-  margin-bottom: .5em;
-  background-color: var(--lightFontClr);
-  font-size: 1.7em;
-  text-align: center;
-  border-radius: 1em;
-}
-
-.quizAwnserDisplay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 95%;
-}
-
-.label {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.hideRadio {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.customRadio {
-  background-color: var(--lightFontClr);
-  color: var(--mainFontClr);
-  font-size: 1.5em;
-  border: 1px solid var(--mainFontClr);
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 1.5em;
-  width: 1.8em;
-  border-radius: 50%;
-}
-
-.awnserOption {
-  background-color: var(--lightFontClr);
-  color: var(--mainFontClr);
-  font-size: 1.5em;
-  border: 1px solid var(--mainFontClr);
-  -webkit-box-shadow: var(--darkBox);
-          box-shadow: var(--darkBox);
-  position: relative;
-  height: 1.5em;
-  width: 100%;
-  margin-left: .5em;
-  text-align: center;
-}
-
-.label input:checked ~ .customRadio, .label input:checked ~ .awnserOption {
-  background-color: blue;
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=math.css.map */
