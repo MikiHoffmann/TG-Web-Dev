@@ -33,8 +33,8 @@ body {
   width: 90%;
   overflow: hidden;
   background-color: transparent;
-  -webkit-box-shadow: 5px 5px 9px black;
-          box-shadow: 5px 5px 9px black;
+  -webkit-box-shadow: 5px 5px 9px #000000;
+          box-shadow: 5px 5px 9px #000000;
 }
 
 @media only screen and (min-width: 31.25em) {
@@ -75,8 +75,8 @@ img {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   z-index: 1;
-  -webkit-box-shadow: 2px 2px 15px black;
-          box-shadow: 2px 2px 15px black;
+  -webkit-box-shadow: 2px 2px 15px #000000;
+          box-shadow: 2px 2px 15px #000000;
 }
 
 img.active {
@@ -103,7 +103,7 @@ img.next {
   width: 8%;
   background-color: rgba(70, 69, 71, 0.4);
   border: none;
-  color: white;
+  color: #ffffff;
   z-index: 3;
   cursor: pointer;
 }

@@ -18,12 +18,12 @@ function createQuizLayout() {
     quizBackground.appendChild(quizContainer);
 }
 let questionNumber = '1';
-    let question = '10 + 5';
-    let right = '15';
-    let wrong = ['1','33','-4','12'];
-    wrong.push(right);
-    let allAwnsers = wrong;
-    const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+let question = '10 + 5';
+let rightAwnser = '15';
+let wrong = ['1','33','-4','12'];
+wrong.push(rightAwnser);
+let allAwnsers = wrong;
+const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 function fillQuizSections() {
     for(let i = 0; i < allAwnsers.length; i++) {
@@ -50,19 +50,16 @@ function createButtons() {
         buttonDisplay.innerHTML += button;
     }
     const check = document.getElementById('check');
-console.log(check);
-check.onclick = checkAwnser;
+    check.onclick = checkAwnser;
 }
-
-
 function checkAwnser() {
-    let checked = document.getElementsByClassName('choice');
-    for(let i = 0; i < checked.length; i++) {
-        if((checked[i].checked === true) && (checked[i].value === right)) {
-            checked[i].parentElement.classList.toggle('awnserRight');
+    let checkedRadio = document.getElementsByClassName('choice');
+    for(let i = 0; i < checkedRadio.length; i++) {
+        if((checkedRadio[i].checked === true) && (checkedRadio[i].value === rightAwnser)) {
+            checkedRadio[i].parentElement.classList.toggle('awnserRight');
         }
-        else if(checked[i].checked === true) {
-            checked[i].parentElement.classList.toggle('awnserWrong');
+        else if(checkedRadio[i].checked === true) {
+            checkedRadio[i].parentElement.classList.toggle('awnserWrong');
         }
     }
 }

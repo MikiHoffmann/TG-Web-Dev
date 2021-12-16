@@ -10,8 +10,10 @@
     }
 }
 .quizStarter {
+    position: relative;
+    align-self: baseline;
     font-family: 'Josefin Slab', serif;
-    padding: .2em .4em;
+    padding: .4em;
     background-color: var(--lightFontClr);
     box-shadow: var(--lightBox);
     animation-name: pulse;

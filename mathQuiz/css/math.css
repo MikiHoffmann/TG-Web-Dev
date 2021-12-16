@@ -353,7 +353,7 @@ body {
   background-color: var(--lightFontClr);
   color: var(--mainFontClr);
   width: auto;
-  padding: .2em;
+  padding: .4em;
   border: none;
   -ms-flex-item-align: baseline;
       align-self: baseline;
