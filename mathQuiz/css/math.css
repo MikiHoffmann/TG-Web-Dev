@@ -111,6 +111,11 @@ body {
           align-items: center;
   max-height: 80%;
   width: 85%;
+  background-image: url(../image/scienceBackground.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 1em;
 }
 
@@ -152,7 +157,7 @@ body {
   text-align: center;
 }
 
-.quizAwnserDisplay {
+.quizAwnserForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,6 +167,10 @@ body {
           flex-direction: column;
   width: 95%;
   margin: .5em 0;
+}
+
+.quizAwnserForm fieldset {
+  border: none;
 }
 
 .label {
@@ -233,12 +242,28 @@ body {
   background-color: var(--select);
 }
 
-.awnserRight input:checked ~ .customRadio, .awnserRight input:checked ~ .awnserOption {
+.awnserRight input:checked ~ .customRadio {
+  border: 2px ridge var(--greenBack);
+}
+
+.awnserRight input:checked ~ .awnserOption {
   background-color: var(--greenBack);
 }
 
-.awnserWrong input:checked ~ .customRadio, .awnserWrong input:checked ~ .awnserOption {
+.awnserWrong input:checked ~ .customRadio {
+  border: 2px ridge var(--redBack);
+}
+
+.awnserWrong input:checked ~ .awnserOption {
   background-color: var(--redBack);
+}
+
+.correctionAwnser input ~ .customRadio {
+  background-color: var(--greenBack);
+}
+
+.correctionAwnser input ~ .awnserOption {
+  border: 2px ridge var(--greenBack);
 }
 
 .quizWrapper {
@@ -267,10 +292,23 @@ body {
   margin-bottom: 1.5em;
 }
 
+.quizWrapper h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.5em;
+}
+
 .quizStarter {
-  font-family: 'Josefin Slab', serif;
-  padding: .2em .4em;
+  position: relative;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 0 .5em .2em .5em;
+  padding: .3em;
   background-color: var(--lightFontClr);
+  font-family: 'Josefin Slab', serif;
+  font-size: 1.05em;
+  font-weight: bold;
   -webkit-box-shadow: var(--lightBox);
           box-shadow: var(--lightBox);
   -webkit-animation-name: pulse;
@@ -330,7 +368,7 @@ body {
   }
 }
 
-.buttonDisplay {
+.navButtons {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -362,5 +400,10 @@ body {
 
 .button:hover {
   background-color: var(--select);
+}
+
+.checkButton {
+  display: block;
+  margin: 1.5em auto;
 }
 /*# sourceMappingURL=math.css.map */

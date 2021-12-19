@@ -28,6 +28,11 @@
     align-items: center;
     max-height: 80%;
     width: 85%;
+    background-image: url(../image/scienceBackground.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 1em;
     &  h1 {
         margin: .2em 0 .4em 0;

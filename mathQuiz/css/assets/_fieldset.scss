@@ -1,0 +1,60 @@
+.label {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2em;
+    width: 100%;
+    margin-top: .5em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+.label:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+.hideRadio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.customRadio {
+    @include lightSetting;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.8em;
+    border-radius: 50%;
+}
+.awnserOption {
+    @include lightSetting;
+    position: relative;
+    height: 2em;
+    width: 100%;
+    margin: 0 .5em;
+    padding: .5em;
+    text-align: center;
+}
+.label input:checked ~ .customRadio, .label input:checked ~ .awnserOption {
+    background-color: var(--select);
+}
+.awnserRight input:checked ~ .customRadio {
+    border: 2px ridge var(--greenBack);
+}
+.awnserRight input:checked ~ .awnserOption {
+    background-color: var(--greenBack);
+}
+.awnserWrong input:checked ~ .customRadio {
+    border: 2px ridge var(--redBack);
+}
+.awnserWrong input:checked ~ .awnserOption {
+    background-color: var(--redBack);
+}
+.correctionAwnser input ~ .customRadio {
+    background-color: var(--greenBack);
+}
+.correctionAwnser input ~ .awnserOption {
+    border: 2px ridge var(--greenBack);
+}

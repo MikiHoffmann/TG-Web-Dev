@@ -8,13 +8,20 @@
     h1 {
         margin-bottom: 1.5em;
     }
+    h2 {
+        display: flex;
+        height: 2.5em;
+    }
 }
 .quizStarter {
     position: relative;
-    align-self: baseline;
-    font-family: 'Josefin Slab', serif;
-    padding: .4em;
+    align-self: flex-start;
+    margin: 0 .5em .2em .5em;
+    padding: .3em;
     background-color: var(--lightFontClr);
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.05em;
+    font-weight: bold;
     box-shadow: var(--lightBox);
     animation-name: pulse;
     animation-duration: 1.5s;
