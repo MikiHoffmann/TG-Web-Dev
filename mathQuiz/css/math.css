@@ -31,14 +31,14 @@ body {
   background-attachment: fixed;
   font-family: 'Josefin Slab', serif;
   font-size: 1em;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 :root {
   --mainFontClr: rgb(0,0,0);
   --lightFontClr: rgb(203, 221, 233);
   --mainBack: rgba(5, 4, 7,0.8);
-  --mainBackTrans: rgba(5, 4, 7, 0.4);
+  --mainBackTrans: rgba(5, 4, 7, 0.6);
   --greenBack: rgb(70, 219, 70);
   --redBack: rgb(230, 32, 32);
   --select: rgb(161, 199, 235);
@@ -122,18 +122,7 @@ body {
 .quizContainer h1 {
   margin: .2em 0 .4em 0;
   padding: 0;
-  line-height: 1;
-}
-
-.button {
-  background-color: var(--lightFontClr);
-  color: var(--mainFontClr);
-  width: 5em;
-  margin-bottom: 3em;
-  padding: .2em;
-  font-size: .8em;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  background-color: var(--mainBackTrans);
 }
 
 .quizQuestionDisplay {
