@@ -31,7 +31,7 @@ body {
   background-attachment: fixed;
   font-family: 'Josefin Slab', serif;
   font-size: 1em;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 :root {
@@ -53,17 +53,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
   height: 100%;
   width: 100%;
   opacity: 0;
-  background-color: var(--mainBackTrans);
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-image: url(../image/scienceBackground.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 1em;
+  -webkit-transition: .5s;
+  transition: .5s;
   z-index: 2;
   -webkit-animation-name: showQuiz;
           animation-name: showQuiz;
@@ -91,6 +96,15 @@ body {
   }
 }
 
+.quizTitle {
+  position: absolute;
+  top: 0;
+  margin: .5em auto;
+  font-size: 2em;
+  color: var(--lightFontClr);
+  text-align: center;
+}
+
 .quizContainer {
   background-color: var(--mainBack);
   color: var(--lightFontClr);
@@ -98,31 +112,70 @@ body {
   -webkit-box-shadow: var(--lightBox);
           box-shadow: var(--lightBox);
   position: absolute;
+  top: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  justify-items: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-height: 80%;
-  width: 85%;
-  background-image: url(../image/scienceBackground.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 1em;
+  height: 85%;
+  width: 90%;
+  overflow: hidden;
+  background-color: var(--mainBackTrans);
 }
 
-.quizContainer h1 {
-  margin: .2em 0 .4em 0;
-  padding: 0;
-  background-color: var(--mainBackTrans);
+.quizForm {
+  position: relative;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 95%;
+  margin: 1em 0;
+}
+
+.formField {
+  position: absolute;
+  border: none;
+  position: absolute;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  z-index: 3;
+}
+
+.formField.active {
+  position: relative;
+  display: block;
+}
+
+.formField.previous {
+  display: block;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.formField.next {
+  display: block;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.formField legend {
+  width: 100%;
+  text-align: center;
 }
 
 .quizQuestionDisplay {
@@ -136,7 +189,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 95%;
-  margin: .5em 0;
+  margin: .5em auto;
   padding: .3em;
   background-color: var(--lightFontClr);
   border: 1px ridge var(--mainFontClr);
@@ -144,22 +197,6 @@ body {
   font-size: 1.7em;
   font-weight: bold;
   text-align: center;
-}
-
-.quizAwnserForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 95%;
-  margin: .5em 0;
-}
-
-.quizAwnserForm fieldset {
-  border: none;
 }
 
 .label {
@@ -256,6 +293,7 @@ body {
 }
 
 .quizWrapper {
+  position: relative;
   background-color: var(--mainBack);
   color: var(--lightFontClr);
   border: 1px ridge var(--lightFontClr);
@@ -358,7 +396,8 @@ body {
 }
 
 .navButtons {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,7 +412,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 95%;
-  padding: 1.5em .5em .5em .5em;
+  padding: 1.5em .5em 1em .5em;
 }
 
 .button {

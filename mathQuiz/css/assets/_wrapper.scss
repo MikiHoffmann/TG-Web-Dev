@@ -1,4 +1,5 @@
 .quizWrapper {
+    position: relative;
     @include initialSetting;
     display: flex;
     flex-direction: column;

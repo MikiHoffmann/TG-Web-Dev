@@ -1,11 +1,12 @@
 .navButtons {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 95%;
-    padding: 1.5em .5em .5em .5em;
+    padding: 1.5em .5em 1em .5em;
 }
 .button {
     @include lightSetting;

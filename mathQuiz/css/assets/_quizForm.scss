@@ -1,0 +1,51 @@
+.quizForm {
+    position: relative;
+    top: 0;
+    display: flex;
+    overflow: hidden;
+    width: 95%;
+    margin: 1em 0;
+}
+.formField {
+    position: absolute;
+    border: none;
+    position: absolute;
+    flex: 100%;
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    transition: all .5s ease-in-out;
+    z-index: 3;
+    &.active {
+        position: relative;
+        display: block;
+        }
+    &.previous {
+        display: block;
+        transform: translateX(-100%);
+        }
+    &.next {
+        display: block;
+        transform: translateX(100%);
+        }
+    legend {
+        width: 100%;
+        text-align: center
+    }
+}
+.quizQuestionDisplay {
+    @include lightSetting;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: .5em auto;
+    padding: .3em;
+    background-color: var(--lightFontClr);
+    border: 1px ridge var(--mainFontClr);
+    color: var(--mainFontClr);
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center;
+}

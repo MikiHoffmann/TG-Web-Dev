@@ -1,0 +1,46 @@
+.quizBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-image: url(../image/scienceBackground.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 1em;
+    transition: .5s;
+    z-index: 2;
+    animation-name: showQuiz;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes showQuiz {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.quizTitle {
+    position: absolute;
+    top: 0;
+    margin: .5em auto;
+    font-size: 2em;
+    color: var(--lightFontClr);
+    text-align: center;
+}
+.quizContainer {
+    @include initialSetting;
+    position: absolute;
+    top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 90%;
+    overflow: hidden;
+    background-color: var(--mainBackTrans);
+}

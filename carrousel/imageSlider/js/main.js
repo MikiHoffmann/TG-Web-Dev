@@ -20,7 +20,7 @@ for(let i = 0; i < images.length; i++) {
     galleryItem.src = 'images/' +  images[i];
     galleryItems.push(galleryItem);
 }
-
+console.log(galleryItems);
 let active = 0;
 let next = 1;
 let previous = (galleryItems.length - 1);
