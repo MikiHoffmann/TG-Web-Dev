@@ -56,6 +56,9 @@ for(let k of keys){
 let options = '';
 
 let formFields = []
+let allLabels = [];
+let label = '';
+let checkButton;
 function createFieldsets() {
     for(let i = 0; i < questions.length; i++) {
         let formField = document.createElement('fieldset');
@@ -75,19 +78,21 @@ function createFieldsets() {
         options.push(questions[i].rightAwnser)
         console.log(options); // delete log later
         for (let i = 0; i < options.length; i++) {
-            let allLabels = [];
             let template = `<input class='hideRadio choice' type='radio' name='choice' value='${options[i]}'/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption choice'>${options[i]}</span>`;
-            let label = template;
+            label = template;
             allLabels = document.createElement('label');
             allLabels.classList.add('label');
             allLabels.innerHTML += label;
             formField.appendChild(allLabels);
-        };    
-    }
-    
-    //const checkButton = document.querySelector('#checkButton');
-    //checkButton.onclick = checkAwnser();
+        };
+        checkButton = document.createElement('button');
+        checkButton.innerText = 'check my awnser';
+        formField.appendChild(checkButton);
+        checkButton.classList.add('button','checkButton');
+        checkButton.onclick = checkAwnser;        
+    } 
 }
+
 const navButtons = [
     {id:'previousButton',text:'previous'},
     {id:'nextButton',text:'next'},
@@ -153,23 +158,35 @@ function createNavButtons() {
         formFields[previous].classList.add('previous');
     }
 }
-/*
+
 function checkAwnser() {
-    let allOptions = document.querySelectorAll('input[name="choice"]');
-    let correct = '';
+    //console.log(allLabels);
+    let allOptions = [];
+    let options = allLabels.querySelectorAll('input[name="choice"]');
+    let option;
+    for(let i = 0; i < options.length; i++) {
+        option = options[i];
+        allOptions.push(option);
+    }
+    let correct = '1000';
+    console.log(allOptions);
     //let points = 0;
-    for(let j = 0; j < allOptions.length; j++) {
-        if(allOptions[j].value === questions[j].rightAwnser) {
-            correct = allOptions[j];
+    for(let i = 0; i < allOptions.length; i++) {
+        if(allOptions[i].value === correct) {
+            correct = allOptions[i].value;
         }
-        if((allOptions[j].checked === true) && (allOptions[j].value === questions[j].rightAwnser)) {
-            allOptions[j].parentElement.classList.add('awnserRight');
+        //console.log(correct);
+        if((allOptions[i].checked === true) && (allOptions[i].value === correct)) {
+            allOptions[i].parentElement.classList.add('awnserRight');
             //++points;
         }
-        if((allOptions[j].checked === true) && (allOptions[j].value !== questions[j].rightAwnser)) {
-            allOptions[j].parentElement.classList.add('awnserWrong');
+        if((allOptions[i].checked === true) && (allOptions[i].value !== correct)) {
+            allOptions[i].parentElement.classList.add('awnserWrong');
             correct.parentElement.classList.add('correctionAwnser');
         }
     }
-}      
-      */  
+}
+function createResults() {
+    let resultsDisplay = document.createElement('div');
+    
+}
