@@ -34,18 +34,18 @@
         width: 100%;
         text-align: center
     }
-}
-.quizQuestionDisplay {
-    @include lightSetting;
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    margin: .5em auto;
-    padding: .3em;
-    background-color: var(--lightFontClr);
-    border: 1px ridge var(--mainFontClr);
-    color: var(--mainFontClr);
-    font-size: 1.7em;
-    font-weight: bold;
-    text-align: center;
+    .quizQuestionDisplay {
+        @include lightSetting;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: .5em auto;
+        padding: .3em;
+        background-color: var(--lightFontClr);
+        border: 1px ridge var(--mainFontClr);
+        color: var(--mainFontClr);
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+    }
 }

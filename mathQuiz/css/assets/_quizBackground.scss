@@ -34,10 +34,11 @@
 }
 .quizContainer {
     @include initialSetting;
-    position: absolute;
+    position: relative;
     top: 8%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     height: 85%;
     width: 90%;

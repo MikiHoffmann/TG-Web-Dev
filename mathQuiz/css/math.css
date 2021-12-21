@@ -111,14 +111,18 @@ body {
   border: 1px ridge var(--lightFontClr);
   -webkit-box-shadow: var(--lightBox);
           box-shadow: var(--lightBox);
-  position: absolute;
+  position: relative;
   top: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -178,7 +182,7 @@ body {
   text-align: center;
 }
 
-.quizQuestionDisplay {
+.formField .quizQuestionDisplay {
   background-color: var(--lightFontClr);
   color: var(--mainFontClr);
   display: -webkit-box;
@@ -395,43 +399,51 @@ body {
   }
 }
 
-.navButtons {
+.navButtonContainer {
   position: absolute;
   bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   width: 95%;
   padding: 1.5em .5em 1em .5em;
 }
 
-.button {
+.navButtonContainer .button {
   background-color: var(--lightFontClr);
   color: var(--mainFontClr);
   width: auto;
   padding: .4em;
   border: none;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
+  -webkit-transition: .5s;
+  transition: .5s;
   cursor: pointer;
 }
 
-.button:hover {
+.navButtonContainer .button:hover {
   background-color: var(--select);
 }
 
-.checkButton {
-  display: block;
-  margin: 1.5em auto;
+.navButtonContainer .button:nth-of-type(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1/1/1/2;
+}
+
+.navButtonContainer .button:nth-of-type(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: 1/6/1/6;
+}
+
+.navButtonContainer .button:nth-of-type(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: 2/3/2/5;
 }
 /*# sourceMappingURL=math.css.map */
