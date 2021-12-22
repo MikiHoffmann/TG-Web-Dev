@@ -30,8 +30,6 @@ function createQuizBackground() {
     navButtonContainer.id = 'navButtonContainer';
     navButtonContainer.classList.add('navButtonContainer');
 }
-
-
 const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 class MathProblems {
     constructor(calculation,rightAwnser,wrongAwnsers) {
@@ -58,13 +56,12 @@ let options = '';
 let formFields = []
 let allLabels = [];
 let label = '';
-let checkButton;
 function createFieldsets() {
     for(let i = 0; i < questions.length; i++) {
         let formField = document.createElement('fieldset');
         formField.classList.add('formField');
         formField.id = 'question' + questionNumbers[i];
-        console.log(formField); // delete log later
+        //console.log(formField); // delete log later
         let legend = document.createElement('legend');
 
         quizForm.appendChild(formField);
@@ -76,7 +73,7 @@ function createFieldsets() {
             return value;
         }
         options.push(questions[i].rightAwnser)
-        console.log(options); // delete log later
+        //console.log(options); // delete log later
         for (let i = 0; i < options.length; i++) {
             let template = `<input class='hideRadio choice' type='radio' name='choice' value='${options[i]}'/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption choice'>${options[i]}</span>`;
             label = template;
@@ -84,18 +81,17 @@ function createFieldsets() {
             allLabels.classList.add('label');
             allLabels.innerHTML += label;
             formField.appendChild(allLabels);
+            // check awnsers here
         };
-        checkButton = document.createElement('button');
-        checkButton.innerText = 'check my awnser';
-        formField.appendChild(checkButton);
-        checkButton.classList.add('button','checkButton');
-        checkButton.onclick = checkAwnser;        
-    } 
+        console.log(allLabels);
+    }
+    console.log(formFields)
 }
 
 const navButtons = [
     {id:'previousButton',text:'previous'},
     {id:'nextButton',text:'next'},
+    {id:'checkButton',text:'check my awnser'},
     {id:'toResultButton',text: 'show result'}
 ];
 function createNavButtons() {
@@ -104,7 +100,7 @@ function createNavButtons() {
         let navButton = buttonTemplate;
         navButtonContainer.innerHTML += navButton;
     }
-    console.log(formFields);
+    //console.log(formFields);
     let active = 0;
     let next = 1;
     let previous = (formFields.length - 1);
@@ -115,12 +111,14 @@ function createNavButtons() {
     }
     const previousButton = document.querySelector('#previousButton');
     const nextButton = document.querySelector('#nextButton');
+    const checkButton = document.querySelector('#checkButton');
     const toResultButton = document.querySelector('#toResultButton');
     toResultButton.style.display = 'none';
     previousButton.style.display = 'none';
     previousButton.style.d
     previousButton.onclick = showPrevious;
     nextButton.onclick = showNext;
+    checkButton.onclick = checkAwnser;
     //toResultButton.onclick = showResult;
     console.log(previousButton,nextButton);
     function showNext() {
@@ -158,34 +156,59 @@ function createNavButtons() {
         formFields[previous].classList.add('previous');
     }
 }
-
+let myOption;
+let correct;
+let total = 0;
+let points = 0;
 function checkAwnser() {
-    //console.log(allLabels);
-    let allOptions = [];
-    let options = allLabels.querySelectorAll('input[name="choice"]');
-    let option;
-    for(let i = 0; i < options.length; i++) {
-        option = options[i];
-        allOptions.push(option);
+    for(let i = 0; i < questions.length; i++) {
+        //console.log(questions[i].rightAwnser);
+        let correct = questions[i].rightAwnser;
+        console.log(correct);
+        let formField = formFields[i];
+            let myOptions = formField.getElementsByClassName('hideRadio');
+            for(let i = 0; i < myOptions.length; i++) {
+                myOption = myOptions[i];
+                //console.log(myOption); 
+            }  
+            /*
+            for(let j = 0; j < questions.length; j++) {
+                if(myOptions[j].value === questions[j].rightAwnser) {
+                    correct = myOptions[j].value;
+                }
+            }
+                */
+            for(let i = 0; i < myOptions.length; i++) {
+                if((myOptions[i].checked === true) && (myOptions[i].value === correct)) {
+                    myOptions[i].parentElement.classList.add('awnserRight');
+                    ++points;
+                }
+                if((myOptions[i].checked === true) && (myOptions[i].value !== correct)) {
+                    myOptions[i].parentElement.classList.add('awnserWrong');
+                    //correct.parentElement.classList.add('correctionAwnser');
+                }
+            }  
     }
-    let correct = '1000';
-    console.log(allOptions);
-    //let points = 0;
-    for(let i = 0; i < allOptions.length; i++) {
-        if(allOptions[i].value === correct) {
-            correct = allOptions[i].value;
-        }
-        //console.log(correct);
-        if((allOptions[i].checked === true) && (allOptions[i].value === correct)) {
-            allOptions[i].parentElement.classList.add('awnserRight');
-            //++points;
-        }
-        if((allOptions[i].checked === true) && (allOptions[i].value !== correct)) {
-            allOptions[i].parentElement.classList.add('awnserWrong');
-            correct.parentElement.classList.add('correctionAwnser');
-        }
+    console.log(points);
+    console.log(formFields);
+    //let allOptions = [];
+    /*
+    for(let i = 0; i < formFields.length; i++) {
+        let formField = formFields[i];
+            let options = formField.getElementsByClassName('hideRadio');
+            for(let i = 0; i < options.length; i++) {
+                let option = options[i];
+                
+                console.log(option);
+            }        
     }
+    /*
+    
+    total += points;
+    */
 }
+
+
 function createResults() {
     let resultsDisplay = document.createElement('div');
     
