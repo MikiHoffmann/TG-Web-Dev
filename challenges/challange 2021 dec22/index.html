@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+    <title>visitekaartje</title>
+</head>
+<body>
+    
+    <div id="gegevens" class="gegevens">
+        <form id="vCardForm" name="vCardForm">
+            <legend>Vul hier je gegevens in:</legend>
+            <label for="firstName">Voornaam:</label>
+            <input type="text" name="firstName" id="firstName" class="textInput" placeholder="voornaam">
+
+            <label for="lastName">Achternaam:</label>
+            <input type="text" name="lastName" id="lastName" class="textInput" placeholder="achternaam">
+
+            <label for="phone">Telefoonnummer:</label>
+            <input type="number" name="phone" id="phone" size="10"  placeholder="0612345678">
+
+            <label for="street">Straatnaam + huisnummer:</label>
+            <input type="text" name="street" id="street" class="textInput" placeholder="straat 1">
+
+            <label for="zipCode">Postcode:</label>
+            <input type="text" name="zipCode" id="zipCode" class="textInput" size="6" placeholder="1234AA">
+
+            <label for="city">Woonplaats:</label>
+            <input type="text" name="city" id="city" class="textInput" placeholder="jouw stad">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="mail@techgrounds.nl">
+
+            <br><br>
+            <button name="fillCard"  id="fillCard">maak visitekaartje</button>
+            <button name="clearForm"  id="resetForm">opnieuw</button>
+
+
+        </form>
+    </div>
+        
+    <div id="visitekaartje" class="visitekaartje"></div>
+
+</body>
+</html>
