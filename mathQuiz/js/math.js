@@ -73,7 +73,7 @@ function createFieldsets() {
             return value;
         }
         options.push(questions[i].rightAwnser)
-        //console.log(options); // delete log later
+        console.log(options); // delete log later
         for (let i = 0; i < options.length; i++) {
             let template = `<input class='hideRadio choice' type='radio' name='choice' value='${options[i]}'/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption choice'>${options[i]}</span>`;
             label = template;
@@ -83,9 +83,9 @@ function createFieldsets() {
             formField.appendChild(allLabels);
             // check awnsers here
         };
-        console.log(allLabels);
+        //console.log(allLabels);
     }
-    console.log(formFields)
+    //console.log(formFields)
 }
 
 const navButtons = [
@@ -120,7 +120,7 @@ function createNavButtons() {
     nextButton.onclick = showNext;
     checkButton.onclick = checkAwnser;
     //toResultButton.onclick = showResult;
-    console.log(previousButton,nextButton);
+    //console.log(previousButton,nextButton);
     function showNext() {
         if(active < formFields.length - 1) {
             nextField(active + 1);
@@ -161,36 +161,52 @@ let correct;
 let total = 0;
 let points = 0;
 function checkAwnser() {
+    
+    let activeField = document.getElementsByClassName('active');
+    console.log(activeField);
+
+
+
     for(let i = 0; i < questions.length; i++) {
         //console.log(questions[i].rightAwnser);
-        let correct = questions[i].rightAwnser;
-        console.log(correct);
+        //let correct = questions[i].rightAwnser;
+        //console.log(correct);
         let formField = formFields[i];
-            let myOptions = formField.getElementsByClassName('hideRadio');
-            for(let i = 0; i < myOptions.length; i++) {
-                myOption = myOptions[i];
-                //console.log(myOption); 
-            }  
-            /*
-            for(let j = 0; j < questions.length; j++) {
-                if(myOptions[j].value === questions[j].rightAwnser) {
-                    correct = myOptions[j].value;
+        //console.log(formField);
+
+
+                    /*
+            let myOptions = formFields[i].getElementsByClassName('hideRadio');
+                if(formField.classList === 'active') {
+                    for(let i = 0; i < myOptions.length; i++) {
+                        myOption = myOptions[i];
+                        console.log(myOption);
+                    }  
                 }
-            }
-                */
-            for(let i = 0; i < myOptions.length; i++) {
-                if((myOptions[i].checked === true) && (myOptions[i].value === correct)) {
-                    myOptions[i].parentElement.classList.add('awnserRight');
-                    ++points;
+                
+                for(let j = 0; j < formFields.length; j++) {
+                    if(myOptions[j].value === questions[j].rightAwnser) {
+                        correct = myOptions[j].value;
+                        //console.log(correct);
+                    }
                 }
-                if((myOptions[i].checked === true) && (myOptions[i].value !== correct)) {
-                    myOptions[i].parentElement.classList.add('awnserWrong');
-                    //correct.parentElement.classList.add('correctionAwnser');
-                }
-            }  
+                    
+                for(let i = 0; i < myOptions.length; i++) {
+                    if((myOptions[i].checked === true) && (myOptions[i].value === correct)) {
+                        myOptions[i].parentElement.classList.add('awnserRight');
+                        ++points;
+                    }
+                    if((myOptions[i].checked === true) && (myOptions[i].value !== correct)) {
+                        myOptions[i].parentElement.classList.add('awnserWrong');
+                        //correct.parentElement.classList.add('correctionAwnser');
+                    }
+                    */
+                
+            
+             
     }
-    console.log(points);
-    console.log(formFields);
+    //console.log(points);
+    //console.log(formFields);
     //let allOptions = [];
     /*
     for(let i = 0; i < formFields.length; i++) {
