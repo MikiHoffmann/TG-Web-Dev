@@ -55,8 +55,8 @@ fieldset input {
 }
 
 .visitekaartje {
-  height: 15em;
-  min-width: 30em;
+  height: 14em;
+  min-width: 31em;
   border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,7 +98,7 @@ fieldset input {
 }
 
 .vCardField {
-  height: 85%;
+  height: auto;
   width: auto;
   background-color: transparent;
   display: -webkit-box;
@@ -108,7 +108,7 @@ fieldset input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1em;
+  padding: 0 1em;
 }
 
 .cardLine {
