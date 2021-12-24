@@ -41,28 +41,66 @@ label {
   margin-top: 1em;
 }
 
+fieldset {
+  margin-top: 1em;
+  border: none;
+}
+
+fieldset input {
+  margin-left: .5em;
+}
+
 .emptyInput::-webkit-input-placeholder {
   color: red;
 }
 
 .visitekaartje {
-  height: 20em;
+  height: 15em;
   min-width: 30em;
   border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #5a5a5a;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 3px 3px 6px black;
+          box-shadow: 3px 3px 6px black;
+}
+
+.visitekaartje img {
+  height: 60%;
+  width: auto;
+  margin: auto 1em;
+  -webkit-box-shadow: 2px 2px 6px black;
+          box-shadow: 2px 2px 6px black;
+}
+
+.male {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #4639f3;
+  color: black;
+}
+
+.female {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: pink;
+  color: purple;
+}
+
+.fluid {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: green;
 }
 
 .vCardField {
-  height: 100%;
-  width: 100%;
-  background-color: yellow;
+  height: 85%;
+  width: auto;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,6 +114,5 @@ label {
 .cardLine {
   display: inline-block;
   padding: .5em 0;
-  border-bottom: 1px solid red;
 }
 /*# sourceMappingURL=main.css.map */

@@ -50,7 +50,17 @@ function fillvCard(event) {
     let adress = street + ', ' + zipCode + ', ' + city;
     let email = vCardForm.email.value;
     let userID = 'ID: person | ' + Math.random() * 10;
+    let genders = [];
+    let myGender = '';
+    genders = document.getElementsByName('gender');
+    for(let i =0; i < genders.length; i++) {
+        if(genders[i].checked) {
 
+            myGender = genders[i].value;
+        };
+    }
+    console.log(myGender);
+    let image = document.createElement('img');
     let vCardFields = [];
     vCardFields.push('Naam: ' + myName,'Telefoonnummer: ' + phone,'Straat: ' + adress,'E-mail: ' + email,userID)
     let fields = [];
@@ -70,7 +80,10 @@ function fillvCard(event) {
         checkEmail();
     }
     else {
+        image.src = myGender + '.jpg';
+        vCard.appendChild(image);
         vCard.appendChild(vCardField);
+        vCard.classList.add(myGender);
         vCardField.classList.add('vCardField');
         console.log(vCardFields)
         for(let i = 0; i < vCardFields.length; i++) {
