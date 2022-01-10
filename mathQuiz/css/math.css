@@ -146,7 +146,6 @@ body {
 .formField {
   position: absolute;
   border: none;
-  position: absolute;
   -webkit-box-flex: 100%;
       -ms-flex: 100%;
           flex: 100%;

@@ -40,7 +40,7 @@ class MathProblems {
 };
 let questions = [];
 questions[0] = new MathProblems('10 + 5',15,[1,33,-4,12]);
-questions[1] = new MathProblems('1 + 2',3,[2,43,-6,100,7,8]);
+questions[1] = new MathProblems('1 + 2',3,[2,43,-6,100]);
 questions[2] = new MathProblems('6 * 2',12,[22,13,23,44]);
 questions[3] = new MathProblems('6 - 2',4,[55,33,113,44]);
    
@@ -73,7 +73,7 @@ function createFieldsets() {
             return value;
         }
         options.push(questions[i].rightAwnser)
-        console.log(options); // delete log later
+        //console.log(options); // delete log later
         for (let i = 0; i < options.length; i++) {
             let template = `<input class='hideRadio choice' type='radio' name='choice' value='${options[i]}'/><span class='customRadio'>${alphabet[i]}</span><span class='awnserOption choice'>${options[i]}</span>`;
             label = template;
@@ -81,11 +81,9 @@ function createFieldsets() {
             allLabels.classList.add('label');
             allLabels.innerHTML += label;
             formField.appendChild(allLabels);
-            // check awnsers here
+            //console.log(allLabels);
         };
-        //console.log(allLabels);
     }
-    //console.log(formFields)
 }
 
 const navButtons = [
@@ -156,74 +154,33 @@ function createNavButtons() {
         formFields[previous].classList.add('previous');
     }
 }
-let myOption;
-let correct;
-let total = 0;
-let points = 0;
 function checkAwnser() {
-    
-    let activeField = document.getElementsByClassName('active');
-    console.log(activeField);
-
-
-
-    for(let i = 0; i < questions.length; i++) {
-        //console.log(questions[i].rightAwnser);
-        //let correct = questions[i].rightAwnser;
-        //console.log(correct);
-        let formField = formFields[i];
-        //console.log(formField);
-
-
-                    /*
-            let myOptions = formFields[i].getElementsByClassName('hideRadio');
-                if(formField.classList === 'active') {
-                    for(let i = 0; i < myOptions.length; i++) {
-                        myOption = myOptions[i];
-                        console.log(myOption);
-                    }  
-                }
-                
-                for(let j = 0; j < formFields.length; j++) {
-                    if(myOptions[j].value === questions[j].rightAwnser) {
-                        correct = myOptions[j].value;
-                        //console.log(correct);
-                    }
-                }
-                    
-                for(let i = 0; i < myOptions.length; i++) {
-                    if((myOptions[i].checked === true) && (myOptions[i].value === correct)) {
-                        myOptions[i].parentElement.classList.add('awnserRight');
-                        ++points;
-                    }
-                    if((myOptions[i].checked === true) && (myOptions[i].value !== correct)) {
-                        myOptions[i].parentElement.classList.add('awnserWrong');
-                        //correct.parentElement.classList.add('correctionAwnser');
-                    }
-                    */
-                
-            
-             
+    let awnserNo = document.getElementById('question' + questionNumber);
+    let checkedRadio = awnserNo.querySelectorAll('input[name="choice"]');
+    let allOptions = checkedRadio;
+    let correct = [];
+    //let points = 0;
+    let rightAwnser = '';
+    for(let j = 0; j < allOptions.length; j++) {
+        if(allOptions[j].value === rightAwnser) {
+            correct = allOptions[j];
+            console.log(correct);
+        }
     }
-    //console.log(points);
-    //console.log(formFields);
-    //let allOptions = [];
-    /*
-    for(let i = 0; i < formFields.length; i++) {
-        let formField = formFields[i];
-            let options = formField.getElementsByClassName('hideRadio');
-            for(let i = 0; i < options.length; i++) {
-                let option = options[i];
-                
-                console.log(option);
-            }        
+    for(let i = 0; i < checkedRadio.length; i++) {
+        if((checkedRadio[i].checked === true) && (checkedRadio[i].value === '15')) {
+            checkedRadio[i].parentElement.classList.add('awnserRight');
+            //++points;
+        }
+        if((checkedRadio[i].checked === true) && (checkedRadio[i].value !== '15')) {
+            checkedRadio[i].parentElement.classList.add('awnserWrong');
+            correct.parentElement.classList.add('correctionAwnser');
+        }
     }
-    /*
-    
-    total += points;
-    */
 }
 
+         
+       
 
 function createResults() {
     let resultsDisplay = document.createElement('div');
